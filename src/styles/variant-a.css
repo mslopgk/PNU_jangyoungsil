@@ -1,0 +1,74 @@
+/* ============================================================
+   Variant A — Hanji Heritage (한지 헤리티지 · warm paper)
+   ============================================================ */
+
+body.vA {
+  --blue: #7A1F2B;
+  --blue-d: #3A2A22;
+  --blue-dark: #5C3A2A;
+  --blue-l: #F3E9DD;
+  --blue-b: #E0CBAE;
+  --green: #5C7A3A;
+  --green-l: #EEF2E0;
+  --amber: #B8862E;
+  --amber-l: #F6ECD2;
+  --violet: #6B4A2A;
+  --violet-l: #F0E6D6;
+  --rose: #A03A2A;
+  --rose-l: #F5E3DC;
+  --teal: #4A6B5C;
+  --teal-l: #E2EDE7;
+  --gold: #B8862E;
+  --gold-bright: #D4A03A;
+  --juhong: #7A1F2B;
+  --ink: #2B2620;
+  --navy: #2B2620;
+  --body: #4A4238;
+  --muted: #8A7E6E;
+  --border: #E0D6C0;
+  --bg: #F5F0E6;
+  --bg-soft: #EDE6D6;
+  --white: #FFFDF8;
+}
+
+/* serif-forward headings */
+body.vA .ph-title,
+body.vA .vp-title,
+body.vA .it-title,
+body.vA .sb-hero-name,
+body.vA .hh-title,
+body.vA .field-title,
+body.vA .card-title,
+body.vA .t1-name,
+body.vA .bio-portrait .han-name {
+  font-family: 'Nanum Myeongjo', 'Noto Serif KR', serif;
+}
+
+/* warm soft shadows on light surfaces */
+body.vA .card,
+body.vA .kpi-tile,
+body.vA .partner-c,
+body.vA .fac-mini,
+body.vA .page-header,
+body.vA .spec-card,
+body.vA .floor-card,
+body.vA .eco-card,
+body.vA .news-card,
+body.vA .widget,
+body.vA .cta-card {
+  box-shadow: 0 2px 12px rgba(120, 90, 40, 0.07);
+}
+
+/* warmer topbar logo backdrop keeps contrast on ink bar */
+body.vA .tb-cta { box-shadow: 0 4px 10px rgba(184, 134, 46, 0.35); }
+
+/* slightly rounder, paper-like cards */
+body.vA .card,
+body.vA .kpi-tile,
+body.vA .partner-c,
+body.vA .page-header { border-radius: 16px; }
+
+/* warm accent on sidebar hero */
+body.vA .sb-hero { background: linear-gradient(165deg, #3A2A22 0%, #7A1F2B 100%); }
+body.vA .sb-mini-dir-badge { background: linear-gradient(135deg, #3A2A22, #7A1F2B); }
+body.vA .dir-avatar { background: linear-gradient(135deg, #3A2A22, #7A1F2B); }

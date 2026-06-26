@@ -1,0 +1,155 @@
+/* ============================================================
+   Variant B — Quantum Dark (퀀텀 다크 · neon on deep space)
+   ============================================================ */
+
+body.vB {
+  --blue: #38BDF8;
+  --blue-d: #0B1220;
+  --blue-dark: #111A2E;
+  --blue-l: rgba(56, 189, 248, 0.14);
+  --blue-b: #1E3A52;
+  --green: #34D399;
+  --green-l: rgba(52, 211, 153, 0.14);
+  --amber: #FBBF24;
+  --amber-l: rgba(251, 191, 36, 0.14);
+  --violet: #A78BFA;
+  --violet-l: rgba(167, 139, 250, 0.14);
+  --rose: #FB7185;
+  --rose-l: rgba(251, 113, 133, 0.14);
+  --teal: #2DD4BF;
+  --teal-l: rgba(45, 212, 191, 0.14);
+  --gold: #FBBF24;
+  --gold-bright: #FCD34D;
+  --juhong: #FB7185;
+  --ink: #F1F5FF;
+  --navy: #070A14;
+  --body: #C2CCDE;
+  --muted: #7E8AA3;
+  --border: #243049;
+  --bg: #0A0E1A;
+  --bg-soft: #111726;
+  --white: #131A2B;
+}
+
+/* ---- shell ---- */
+body.vB .sidebar { background: #0E1424; }
+body.vB .sb-hero { background: linear-gradient(165deg, #0B1220 0%, #11203A 100%); }
+body.vB .sb-hero::before { background: radial-gradient(circle, rgba(56, 189, 248, 0.25), transparent 60%); }
+body.vB .topbar { border-bottom-color: rgba(56, 189, 248, 0.12); }
+body.vB .airc-footer { background: #070A14; border-top: 1px solid var(--border); }
+
+/* sidebar accent blocks → dark translucent */
+body.vB .sb-axis-context {
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.14), rgba(56, 189, 248, 0.08)) !important;
+  border-color: rgba(167, 139, 250, 0.25) !important;
+}
+body.vB .sb-stat-block {
+  background: linear-gradient(135deg, rgba(52, 211, 153, 0.14), rgba(45, 212, 191, 0.08)) !important;
+  border-color: rgba(52, 211, 153, 0.25) !important;
+}
+body.vB .sb-mini-dir {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.12) 0%, rgba(19, 26, 43, 0) 80%);
+  border-color: var(--border);
+}
+body.vB .sb-mini-dir-badge { background: linear-gradient(135deg, #0B1220, #11203A); }
+
+/* ---- force white surfaces to dark (main.css hardcodes #fff) ---- */
+body.vB .card,
+body.vB .t1-card,
+body.vB .partner-c,
+body.vB .partner-mini,
+body.vB .pi-card,
+body.vB .field,
+body.vB .field-nav,
+body.vB .news-card,
+body.vB .cat-bar,
+body.vB .widget,
+body.vB .pg,
+body.vB .sb-tile,
+body.vB .spec-card,
+body.vB .floor-card,
+body.vB .loc-card,
+body.vB .bio-card,
+body.vB .bio-text,
+body.vB .google-banner {
+  background: #131A2B !important;
+  border-color: var(--border) !important;
+}
+
+/* glow on cards */
+body.vB .card,
+body.vB .kpi-tile,
+body.vB .partner-c,
+body.vB .fac-mini,
+body.vB .page-header,
+body.vB .spec-card,
+body.vB .floor-card,
+body.vB .eco-card,
+body.vB .news-card,
+body.vB .widget,
+body.vB .cta-card,
+body.vB .hire-card,
+body.vB .t1-card {
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.06), 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+/* gradient-to-white sub-surfaces → dark tinted */
+body.vB .acts-deep-cell.blue { background: linear-gradient(165deg, var(--blue-l), #131A2B) !important; border-color: rgba(56, 189, 248, 0.25) !important; }
+body.vB .acts-deep-cell.green { background: linear-gradient(165deg, var(--green-l), #131A2B) !important; border-color: rgba(52, 211, 153, 0.25) !important; }
+body.vB .acts-deep-cell.amber { background: linear-gradient(165deg, var(--amber-l), #131A2B) !important; border-color: rgba(251, 191, 36, 0.25) !important; }
+body.vB .acts-deep-cell.violet { background: linear-gradient(165deg, var(--violet-l), #131A2B) !important; border-color: rgba(167, 139, 250, 0.25) !important; }
+body.vB .eco-card { background: linear-gradient(165deg, var(--green-l), #131A2B) !important; border-color: rgba(52, 211, 153, 0.25) !important; }
+body.vB .acts-cell { background: #0E1424 !important; }
+
+/* kpi icon chips → glowing */
+body.vB .ic-blue,
+body.vB .ic-green,
+body.vB .ic-amber,
+body.vB .ic-violet,
+body.vB .ic-rose {
+  box-shadow: 0 0 18px rgba(56, 189, 248, 0.25);
+}
+
+/* heritage card → dark warm parchment */
+body.vB .heritage-card {
+  background: linear-gradient(135deg, #1a1612, #241d12) !important;
+  border-color: #3a2e1a !important;
+}
+body.vB .heritage-header { background: #0E0B07 !important; }
+body.vB .h-cell.past { background: rgba(251, 191, 36, 0.06) !important; }
+body.vB .h-mark-circ { background: #0E0B07 !important; color: #F5EFE1 !important; }
+body.vB .h-cell.past .h-mark-circ { background: var(--juhong) !important; }
+body.vB .h-cell.past .h-mark-tag { color: #FCD34D !important; }
+body.vB .h-arrow::after { color: #7DD3FC !important; }
+
+/* dir-card & dir-avatar */
+body.vB .dir-card { background: linear-gradient(135deg, #111726, #131A2B) !important; }
+body.vB .dir-avatar { background: linear-gradient(135deg, #0B1220, #11203A) !important; }
+
+/* tables */
+body.vB table.proj-table th { background: #0E1424 !important; }
+body.vB table.proj-table tr:hover { background: rgba(56, 189, 248, 0.08) !important; }
+body.vB .partners-table th { background: #0E1424 !important; }
+body.vB .partners-table tr:hover { background: rgba(56, 189, 248, 0.06) !important; }
+
+/* news date box */
+body.vB .news-date-box { background: rgba(56, 189, 248, 0.08); }
+
+/* google banner border-image stays colorful; text adapts via vars */
+
+/* ---- fix hardcoded navy text (#143F90) on now-dark surfaces ---- */
+body.vB .ph-title em,
+body.vB .airc-slogan,
+body.vB .adc-list li::before,
+body.vB .dd-msg p[style*="--gold"],
+body.vB .t1-center-tag,
+body.vB .loc-map-title {
+  color: #7DD3FC !important;
+}
+
+/* cta-card stays gold; ensure its text readable */
+body.vB .cta-card { color: #1a1206 !important; }
+
+/* primary button glow */
+body.vB .ph-btn-primary { box-shadow: 0 4px 18px rgba(56, 189, 248, 0.35); }
+body.vB .tb-cta { box-shadow: 0 4px 14px rgba(251, 191, 36, 0.35); }
