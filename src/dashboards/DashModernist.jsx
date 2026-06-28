@@ -542,7 +542,7 @@ export default function DashModernist() {
       </div>
 
       <nav className="mod-pill" aria-label="dashboard switch">
-        <Link to="/" className="mod-pill-link"><i className="fas fa-arrow-left" /> 원본</Link>
+        <Link to="/home" className="mod-pill-link"><i className="fas fa-arrow-left" /> 원본</Link>
         <span className="mod-pill-sep" />
         <Link to="/dash" className="mod-pill-link"><i className="fas fa-table-columns" /> 목록</Link>
       </nav>

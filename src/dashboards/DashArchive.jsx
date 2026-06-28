@@ -34,7 +34,7 @@ export default function DashArchive() {
   return (
     <div className="dar" ref={root}>
       <header className="dar-top">
-        <Link to="/" className="dar-brand"><span>蔣</span><b>{institute.name}</b><small>Institutional Archive</small></Link>
+        <Link to="/home" className="dar-brand"><span>蔣</span><b>{institute.name}</b><small>Institutional Archive</small></Link>
         <nav><Link to="/research">연구</Link><Link to="/heritage">헤리티지</Link><Link to="/partners">협약</Link><Link to="/dash">목록</Link></nav>
       </header>
 

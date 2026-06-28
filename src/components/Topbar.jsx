@@ -27,7 +27,7 @@ export default function Topbar() {
         </div>
         <div className="tb-sep"></div>
         <div className="tb-bread">
-          <Link to="/">airc.pusan.ac.kr</Link>
+          <Link to="/home">airc.pusan.ac.kr</Link>
           <i className="fas fa-chevron-right" style={{ fontSize: '9px', color: crumb.chevron }}></i>
           <strong>{crumb.label}</strong>
         </div>

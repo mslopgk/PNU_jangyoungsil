@@ -35,7 +35,7 @@ export default function DashFoundry() {
   return (
     <div className="dfy" ref={root}>
       <header className="dfy-top">
-        <Link to="/" className="dfy-brand">AIRC <b>FOUNDRY</b></Link>
+        <Link to="/home" className="dfy-brand">AIRC <b>FOUNDRY</b></Link>
         <nav><Link to="/research">센터</Link><Link to="/partners">산학협력</Link><Link to="/facility">시설</Link><Link to="/dash">목록</Link></nav>
       </header>
 

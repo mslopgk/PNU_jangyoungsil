@@ -205,7 +205,7 @@ export default function DashNeumorph() {
       </div>
 
       <div style={{ position: 'fixed', bottom: 18, left: '50%', transform: 'translateX(-50%)', zIndex: 9999, display: 'flex', gap: 4, padding: 5, borderRadius: 999, background: 'var(--nm-surface)', boxShadow: '5px 5px 12px var(--nm-dark), -5px -5px 12px var(--nm-light)' }}>
-        <Link to="/" style={pill('#545B6B')}>원본</Link>
+        <Link to="/home" style={pill('#545B6B')}>원본</Link>
         <Link to="/dash" style={pill('#545B6B')}>목록</Link>
       </div>
     </div>

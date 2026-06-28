@@ -47,7 +47,7 @@ export default function DashCivic() {
   return (
     <div className="dcv" ref={root}>
       <header className="dcv-top">
-        <Link to="/" className="dcv-brand"><span>蔣</span><b>{institute.name}</b></Link>
+        <Link to="/home" className="dcv-brand"><span>蔣</span><b>{institute.name}</b></Link>
         <nav>{NAV.map((n) => <Link key={n.code} to={n.to}><em>{n.code}</em>{n.label}</Link>)}</nav>
         <Link to="/partners#contact" className="dcv-cta">연구 협력 신청</Link>
       </header>

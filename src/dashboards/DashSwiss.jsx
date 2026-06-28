@@ -188,7 +188,7 @@ export default function DashSwiss() {
       </div>
 
       <div style={{ position: 'fixed', bottom: 18, left: '50%', transform: 'translateX(-50%)', zIndex: 9999, display: 'flex', gap: 0, padding: 0, borderRadius: 0, background: 'var(--sw-bg)', border: '1px solid var(--sw-ink)' }}>
-        <Link to="/" style={pill('var(--sw-body)', 'none', '1px solid var(--sw-rule)')}>원본</Link>
+        <Link to="/home" style={pill('var(--sw-body)', 'none', '1px solid var(--sw-rule)')}>원본</Link>
         <Link to="/dash" style={pill('#fff', 'var(--sw-accent)', 'none')}>목록</Link>
       </div>
     </div>

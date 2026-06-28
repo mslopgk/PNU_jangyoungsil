@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 
 const ITEMS = [
-  { to: '/', label: '원본', n: '0' },
+  { to: '/home', label: '원본', n: '0' },
   { to: '/dash', label: '목록', n: '≡' },
   { to: '/dash/glass', label: '글래스', n: '1' },
   { to: '/dash/brutal', label: '브루탈', n: '2' },

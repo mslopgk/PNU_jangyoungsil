@@ -41,7 +41,7 @@ export default function DashAtlas() {
   return (
     <div className="dat" ref={root}>
       <header className="dat-top">
-        <Link to="/" className="dat-logo">PNU <b>AI ATLAS</b></Link>
+        <Link to="/home" className="dat-logo">PNU <b>AI ATLAS</b></Link>
         <div className="dat-topline">{institute.founded} · IT관 13,161㎡ · Open Research Platform</div>
         <Link to="/dash" className="dat-index">시안 목록</Link>
       </header>

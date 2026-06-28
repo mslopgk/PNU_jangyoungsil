@@ -502,7 +502,7 @@ export default function DashBrutal() {
       </div>
 
       <nav className="brut-pill" aria-label="dashboard switch">
-        <Link to="/" className="brut-pill-link"><i className="fas fa-arrow-left" /> 원본</Link>
+        <Link to="/home" className="brut-pill-link"><i className="fas fa-arrow-left" /> 원본</Link>
         <span className="brut-pill-sep" />
         <Link to="/dash" className="brut-pill-link"><i className="fas fa-table-columns" /> 목록</Link>
       </nav>

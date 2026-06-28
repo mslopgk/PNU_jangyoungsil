@@ -186,7 +186,7 @@ export default function DashDeco() {
       </div>
 
       <div style={{ position: 'fixed', bottom: 18, left: '50%', transform: 'translateX(-50%)', zIndex: 9999, display: 'flex', gap: 0, background: 'var(--de-ink)', border: '1px solid var(--de-gold)' }}>
-        <Link to="/" style={pill('var(--de-goldL)', '1px solid rgba(205,164,62,.3)')}>원본</Link>
+        <Link to="/home" style={pill('var(--de-goldL)', '1px solid rgba(205,164,62,.3)')}>원본</Link>
         <Link to="/dash" style={pill('var(--de-ink)', 'none', 'var(--de-goldL)')}>목록</Link>
       </div>
     </div>

@@ -181,7 +181,7 @@ export default function DashNotebook() {
       </div>
 
       <div style={{ position: 'fixed', bottom: 18, left: '50%', transform: 'translateX(-50%)', zIndex: 9999, display: 'flex', gap: 0, background: 'var(--nb-paper)', border: '2px solid var(--nb-ink)', boxShadow: '3px 3px 0 var(--nb-ink)' }}>
-        <Link to="/" style={pill('var(--nb-ink)', '1px solid var(--nb-line)')}>원본</Link>
+        <Link to="/home" style={pill('var(--nb-ink)', '1px solid var(--nb-line)')}>원본</Link>
         <Link to="/dash" style={pill('var(--nb-ink)', '1px solid var(--nb-line)')}>목록</Link>
       </div>
     </div>

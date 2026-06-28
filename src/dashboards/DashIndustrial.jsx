@@ -187,7 +187,7 @@ export default function DashIndustrial() {
       </div>
 
       <div style={{ position: 'fixed', bottom: 18, left: '50%', transform: 'translateX(-50%)', zIndex: 9999, display: 'flex', gap: 0, background: 'var(--in-plate)', border: '2px solid var(--in-ink)', boxShadow: '3px 3px 0 var(--in-ink)' }}>
-        <Link to="/" style={pill('var(--in-body)', '1px solid var(--in-line)')}>원본</Link>
+        <Link to="/home" style={pill('var(--in-body)', '1px solid var(--in-line)')}>원본</Link>
         <Link to="/dash" style={pill('var(--in-hazard)', 'none', 'var(--in-ink)')}>목록</Link>
       </div>
     </div>

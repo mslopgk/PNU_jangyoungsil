@@ -437,7 +437,7 @@ export default function DashBento() {
       </div>
 
       <nav className="db-pillnav" aria-label="대시보드 전환">
-        <Link to="/"><i className="fas fa-table-columns"></i> 원본</Link>
+        <Link to="/home"><i className="fas fa-table-columns"></i> 원본</Link>
         <span className="db-pillnav-sep"></span>
         <Link to="/dash"><i className="fas fa-grip"></i> 목록</Link>
       </nav>

@@ -191,7 +191,7 @@ export default function DashNoir() {
         </div>
 
         <div style={{ position: 'fixed', bottom: 18, left: '50%', transform: 'translateX(-50%)', zIndex: 9999, display: 'flex', gap: 0, background: 'var(--no-panel)', border: '1px solid var(--no-ink)' }}>
-          <Link to="/" style={pill('var(--no-body)', '1px solid var(--no-line)')}>원본</Link>
+          <Link to="/home" style={pill('var(--no-body)', '1px solid var(--no-line)')}>원본</Link>
           <Link to="/dash" style={pill('#0A0A0A', 'none', 'var(--no-ink)')}>목록</Link>
         </div>
       </div>

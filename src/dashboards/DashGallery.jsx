@@ -104,7 +104,7 @@ export default function DashGallery() {
         </div>
 
         <div style={{ marginTop: 44, display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-          <Link to="/" style={linkStyle}>← 원본 사이트 (s32)</Link>
+          <Link to="/home" style={linkStyle}>← 원본 사이트 (s32)</Link>
           <Link to="/concepts" style={linkStyle}>랜딩형 시안 3개 →</Link>
         </div>
       </div>

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 const CARDS = [
   {
-    to: '/', n: '0', name: '원본 사이트', dir: 'PNU Navy · Dashboard',
+    to: '/home', n: '0', name: '원본 사이트', dir: 'PNU Navy · Dashboard',
     desc: '교수님이 선택하신 현재 디자인. 사이드바 + 대시보드 레이아웃.',
     bg: 'linear-gradient(135deg,#1E3A5F,#005BAA)', fg: '#fff', accent: '#BFDBFE', font: "'Noto Sans KR',sans-serif",
   },
@@ -59,7 +59,7 @@ export default function ConceptGallery() {
 
         <div style={{ marginTop: 44, display: 'flex', gap: 16, flexWrap: 'wrap' }}>
           <Link to="/dash" style={linkStyle}>대시보드형 시안 15개 →</Link>
-          <Link to="/" style={linkStyle}>← 원본 사이트</Link>
+          <Link to="/home" style={linkStyle}>← 원본 사이트</Link>
         </div>
       </div>
     </div>

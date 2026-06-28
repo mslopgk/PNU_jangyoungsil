@@ -8,7 +8,7 @@ import '../styles/dashboard-obsidian.css'
 gsap.registerPlugin(ScrollTrigger)
 
 const NAV = [
-  { i: 'fa-home', l: '대시보드', to: '/', active: true },
+  { i: 'fa-home', l: '대시보드', to: '/home', active: true },
   { i: 'fa-flag', l: '비전 ACTS', to: '/about#vision' },
   { i: 'fa-history', l: '헤리티지', to: '/heritage' },
   { i: 'fa-microscope', l: '연구센터', to: '/research' },
@@ -214,7 +214,7 @@ export default function DashObsidian() {
         </div>
 
         <div style={{ position: 'fixed', bottom: 18, left: '50%', transform: 'translateX(-50%)', zIndex: 9999, display: 'flex', gap: 4, padding: 5, borderRadius: 999, background: 'rgba(20,20,30,.85)', backdropFilter: 'blur(10px)', border: '1px solid var(--ob-line)' }}>
-          <Link to="/" style={pill('var(--ob-body)')}>원본</Link>
+          <Link to="/home" style={pill('var(--ob-body)')}>원본</Link>
           <Link to="/dash" style={pill('var(--ob-body)')}>목록</Link>
         </div>
       </div>

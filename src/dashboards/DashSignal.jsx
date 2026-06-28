@@ -43,7 +43,7 @@ export default function DashSignal() {
     <div className="dsg" ref={root}>
       <div className="dsg-field" aria-hidden="true" />
       <header className="dsg-top">
-        <Link to="/" className="dsg-brand"><span>JYS</span>{institute.en}</Link>
+        <Link to="/home" className="dsg-brand"><span>JYS</span>{institute.en}</Link>
         <nav><Link to="/research">Research</Link><Link to="/partners">Partners</Link><Link to="/news">News</Link></nav>
       </header>
 

@@ -46,7 +46,7 @@ export default function App() {
       <ScrollToHash />
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<Dashboard />} />
+          <Route path="/home" element={<Dashboard />} />
           <Route path="/about" element={<About />} />
           <Route path="/facility" element={<Facility />} />
           <Route path="/heritage" element={<Heritage />} />
@@ -55,6 +55,7 @@ export default function App() {
           <Route path="/research" element={<Research />} />
           <Route path="*" element={<Dashboard />} />
         </Route>
+        <Route path="/" element={<ConceptGallery />} />
         <Route path="/concepts" element={<ConceptGallery />} />
         <Route path="/concepts/1" element={<Concept1 />} />
         <Route path="/concepts/2" element={<Concept2 />} />

@@ -245,7 +245,7 @@ export default function DashGenerative() {
         </div>
 
         <div style={{ position: 'fixed', bottom: 18, left: '50%', transform: 'translateX(-50%)', zIndex: 9999, display: 'flex', gap: 4, padding: 5, borderRadius: 999, background: 'rgba(6,6,12,.8)', backdropFilter: 'blur(10px)', border: '1px solid var(--gn-line)' }}>
-          <Link to="/" style={pill('var(--gn-body)')}>원본</Link>
+          <Link to="/home" style={pill('var(--gn-body)')}>원본</Link>
           <Link to="/dash" style={pill('var(--gn-body)')}>목록</Link>
         </div>
       </div>

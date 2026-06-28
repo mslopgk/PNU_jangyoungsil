@@ -218,7 +218,7 @@ export default function DashBlueprint() {
         </div>
 
         <div style={{ position: 'fixed', bottom: 18, left: '50%', transform: 'translateX(-50%)', zIndex: 9999, display: 'flex', gap: 4, padding: 5, borderRadius: 999, background: 'rgba(11,42,74,.9)', backdropFilter: 'blur(8px)' }}>
-          <Link to="/" style={pillLink('#fff', 'var(--bp-blue-d)')}>원본</Link>
+          <Link to="/home" style={pillLink('#fff', 'var(--bp-blue-d)')}>원본</Link>
           <Link to="/dash" style={pillLink('#fff', 'var(--bp-blue-d)')}>목록</Link>
         </div>
       </div>

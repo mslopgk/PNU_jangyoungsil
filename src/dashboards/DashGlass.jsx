@@ -494,7 +494,7 @@ export default function DashGlass() {
       </main>
 
       <nav className="dg-pillnav" aria-label="대시보드 전환">
-        <Link to="/" className="dg-pill"><i className="fas fa-arrow-left" /> 원본</Link>
+        <Link to="/home" className="dg-pill"><i className="fas fa-arrow-left" /> 원본</Link>
         <span className="dg-pill-sep" />
         <Link to="/dash" className="dg-pill dg-pill-on"><i className="fas fa-th-large" /> 목록</Link>
       </nav>

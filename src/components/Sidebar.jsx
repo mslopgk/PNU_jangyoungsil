@@ -44,7 +44,7 @@ export default function Sidebar() {
 
       <div className="sb-section">
         <div className="sb-section-title">연구원 소개</div>
-        <SbLink to="/" active={path === '/'}><i className="fas fa-home"></i> 대시보드</SbLink>
+        <SbLink to="/home" active={path === '/home'}><i className="fas fa-home"></i> 대시보드</SbLink>
         <SbLink to="/about#vision" active={path === '/about'}><i className="fas fa-flag"></i> 비전 · ACTS</SbLink>
         <SbLink to="/about#director"><i className="fas fa-comment"></i> 원장 인사말</SbLink>
         <SbLink to="/about#org"><i className="fas fa-sitemap"></i> 조직 구성</SbLink>

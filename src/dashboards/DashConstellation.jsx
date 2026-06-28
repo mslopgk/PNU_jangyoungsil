@@ -36,7 +36,7 @@ export default function DashConstellation() {
   return (
     <div className="dco" ref={root}>
       <header className="dco-top">
-        <Link to="/" className="dco-brand">蔣英實 <b>Constellation</b></Link>
+        <Link to="/home" className="dco-brand">蔣英實 <b>Constellation</b></Link>
         <nav><Link to="/heritage">Heritage</Link><Link to="/research">Research</Link><Link to="/partners">Partners</Link><Link to="/dash">Index</Link></nav>
       </header>
 

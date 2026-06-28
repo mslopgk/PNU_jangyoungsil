@@ -601,7 +601,7 @@ export default function DashMission() {
       </main>
 
       <nav className="dm-pillnav" aria-label="대시보드 전환">
-        <Link to="/" className="dm-pill"><i className="fas fa-arrow-left" /> 원본</Link>
+        <Link to="/home" className="dm-pill"><i className="fas fa-arrow-left" /> 원본</Link>
         <span className="dm-pill-sep" />
         <Link to="/dash" className="dm-pill on"><i className="fas fa-th-large" /> 목록</Link>
       </nav>
