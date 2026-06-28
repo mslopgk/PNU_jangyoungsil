@@ -40,6 +40,61 @@ img { display:block; max-width:100%; }
 .mono { font-family:'JetBrains Mono', monospace; }
 .myeongjo { font-family:'Nanum Myeongjo', serif; }
 
+.preview-logo {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 42px;
+  padding: 7px 11px 7px 8px;
+  border: 1px solid rgba(255,255,255,.72);
+  border-radius: 12px;
+  background: rgba(255,255,255,.9);
+  box-shadow: 0 16px 38px rgba(8,15,30,.16);
+  backdrop-filter: blur(14px);
+  color: #111827;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.preview-logo img {
+  height: 27px;
+  width: auto;
+  max-width: 118px;
+  object-fit: contain;
+}
+.preview-logo span {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  line-height: 1.1;
+}
+.preview-logo b {
+  font-size: 11.5px;
+  font-weight: 900;
+  letter-spacing: -.02em;
+  white-space: nowrap;
+}
+.preview-logo small {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 8.5px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #005BAA;
+}
+@media (max-width: 720px) {
+  .preview-logo {
+    top: 10px;
+    right: 10px;
+    padding: 6px;
+    border-radius: 10px;
+  }
+  .preview-logo img { height: 23px; max-width: 104px; }
+  .preview-logo span { display: none; }
+}
+
 /* ── TOPBAR ── */
 .topbar { height:56px; background:var(--blue-d); display:flex; align-items:center; justify-content:space-between; padding:0 24px; position:sticky; top:0; z-index:200; border-bottom:1px solid rgba(255,255,255,.08); }
 .tb-left { display:flex; align-items:center; gap:16px; }
@@ -1946,5 +2001,4 @@ footer.airc-footer { padding:32px 0; border-top:1px solid var(--border); margin-
 
 /* === dir-avatar & sb-mini-dir-badge "송" 가독성 보정 === */
 .dir-avatar, .sb-mini-dir-badge { color:#BFDBFE !important; }
-
 

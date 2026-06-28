@@ -2,6 +2,7 @@ import { Routes, Route, useLocation } from 'react-router-dom'
 import Layout from './components/Layout'
 import ScrollToHash from './components/ScrollToHash'
 import VariantSwitcher from './components/VariantSwitcher'
+import PreviewLogo from './components/PreviewLogo'
 import ConceptNav from './concepts/ConceptNav'
 import ConceptGallery from './concepts/ConceptGallery'
 import Concept1 from './concepts/Concept1'
@@ -39,7 +40,7 @@ import Research from './pages/Research'
 
 export default function App() {
   const { pathname } = useLocation()
-  const onPreview = pathname.startsWith('/concepts') || pathname.startsWith('/dash')
+  const onPreview = pathname === '/' || pathname.startsWith('/concepts') || pathname.startsWith('/dash')
 
   return (
     <>
@@ -83,7 +84,7 @@ export default function App() {
         <Route path="/dash/foundry" element={<DashFoundry />} />
         <Route path="/dash/constellation" element={<DashConstellation />} />
       </Routes>
-      {onPreview ? <ConceptNav /> : <VariantSwitcher />}
+      {onPreview ? <><PreviewLogo /><ConceptNav /></> : <VariantSwitcher />}
     </>
   )
 }
