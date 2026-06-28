@@ -26,6 +26,9 @@ import DashIndustrial from './dashboards/DashIndustrial'
 import DashCivic from './dashboards/DashCivic'
 import DashAtlas from './dashboards/DashAtlas'
 import DashSignal from './dashboards/DashSignal'
+import DashArchive from './dashboards/DashArchive'
+import DashFoundry from './dashboards/DashFoundry'
+import DashConstellation from './dashboards/DashConstellation'
 import Dashboard from './pages/Dashboard'
 import About from './pages/About'
 import Facility from './pages/Facility'
@@ -75,6 +78,9 @@ export default function App() {
         <Route path="/dash/civic" element={<DashCivic />} />
         <Route path="/dash/atlas" element={<DashAtlas />} />
         <Route path="/dash/signal" element={<DashSignal />} />
+        <Route path="/dash/archive" element={<DashArchive />} />
+        <Route path="/dash/foundry" element={<DashFoundry />} />
+        <Route path="/dash/constellation" element={<DashConstellation />} />
       </Routes>
       {onPreview ? <ConceptNav /> : <VariantSwitcher />}
     </>

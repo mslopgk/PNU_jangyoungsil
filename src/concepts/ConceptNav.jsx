@@ -21,6 +21,9 @@ const ITEMS = [
   { to: '/dash/civic', label: '시빅', n: '16' },
   { to: '/dash/atlas', label: '아틀', n: '17' },
   { to: '/dash/signal', label: '시그널', n: '18' },
+  { to: '/dash/archive', label: '아카이브', n: '19' },
+  { to: '/dash/foundry', label: '파운드리', n: '20' },
+  { to: '/dash/constellation', label: '별자리', n: '21' },
   { to: '/concepts', label: '랜딩', n: 'L' },
 ]
 

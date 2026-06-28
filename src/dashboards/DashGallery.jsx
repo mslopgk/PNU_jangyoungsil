@@ -55,6 +55,15 @@ const DASH = [
   { to: '/dash/signal', n: '18', name: '소버린 시그널', dir: 'Sovereign Signal · Prestige Dark', gene: 'G1 · G2 · G4',
     why: '장영실 헤리티지와 AI 주권 메시지를 프레스티지 다크 네트워크로 표현. 고급스럽고 강한 첫인상용.',
     bg: 'linear-gradient(135deg,#050713,#18213F)', fg: '#EDF4FF', accent: '#47D5FF', font: "'Chakra Petch',sans-serif" },
+  { to: '/dash/archive', n: '19', name: '인스티튜셔널 아카이브', dir: 'Archive Cabinet · Record', gene: 'G1 · G3 · G5',
+    why: '기관 신뢰를 문서함·색인표·인장·기록물 언어로 극대화. 원본을 좋아한 클라이언트에게 가장 안정적인 고급 대안.',
+    bg: 'linear-gradient(135deg,#EBE4D4,#FFFAF0)', fg: '#211B14', accent: '#8D1F24', font: "'Nanum Myeongjo',serif" },
+  { to: '/dash/foundry', n: '20', name: 'AX 파운드리', dir: 'Industrial Foundry · Applied', gene: 'G3 · G4',
+    why: '산업 문제를 AI 성과로 주조한다는 은유. 산학협력·제조·실증 중심 메시지에 강한 실무형 프리미엄.',
+    bg: 'linear-gradient(135deg,#141414,#3A3932)', fg: '#F5F0E2', accent: '#FFC400', font: "'Archivo Black',sans-serif" },
+  { to: '/dash/constellation', n: '21', name: '사이언스 별자리', dir: 'Scientific Constellation · Heritage', gene: 'G2 · G1',
+    why: '장영실의 천문 상징을 AI 연구 네트워크로 재해석. 헤리티지 스토리텔링이 강한 감성형 프레스티지 시안.',
+    bg: 'linear-gradient(135deg,#070814,#1A2242)', fg: '#F3F1E8', accent: '#E0C676', font: "'Cormorant Garamond',serif" },
 ]
 
 export default function DashGallery() {
@@ -64,13 +73,13 @@ export default function DashGallery() {
         <div style={{ marginBottom: 28 }}>
           <div style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: 12, letterSpacing: '.2em', color: '#38BDF8', textTransform: 'uppercase', marginBottom: 16 }}>Dashboard Concepts · 대시보드 시안</div>
           <h1 style={{ fontFamily: "'Nanum Myeongjo',serif", fontSize: 'clamp(38px,5.5vw,66px)', fontWeight: 800, lineHeight: 1.08, letterSpacing: '-.03em', margin: 0 }}>
-            대시보드형 <span style={{ background: 'linear-gradient(135deg,#38BDF8,#A78BFA)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>18가지 디자인</span>
+            대시보드형 <span style={{ background: 'linear-gradient(135deg,#38BDF8,#A78BFA)', WebkitBackgroundClip: 'text', backgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>21가지 디자인</span>
           </h1>
         </div>
 
         <div style={{ background: '#0E1322', border: '1px solid rgba(56,189,248,.18)', borderRadius: 14, padding: '20px 24px', marginBottom: 44, fontSize: 13.5, color: '#94A3C4', lineHeight: 1.85 }}>
           <span style={{ color: '#7DD3FC', fontWeight: 700 }}>왜 s32를 좋아하는 분이 좋아할까 —</span> s32의 취향 DNA 5유전자: <b style={{ color: '#E8F0FF' }}>G1 제도적 권위</b> · <b style={{ color: '#E8F0FF' }}>G2 전통×AI 이중성</b> · <b style={{ color: '#E8F0FF' }}>G3 정보 밀도·구조</b> · <b style={{ color: '#E8F0FF' }}>G4 정돈된 폴리시</b> · <b style={{ color: '#E8F0FF' }}>G5 한국어 타이포</b>.
-          아래 <b style={{ color: '#FFB000' }}>01-18</b> 시안은 각각 특정 유전자를 극대화한 "아예 다른 디자인"이며, 왜 s32 취향과 같은 맥인지 근거가 명확합니다.
+          아래 <b style={{ color: '#FFB000' }}>01-21</b> 시안은 각각 특정 유전자를 극대화한 "아예 다른 디자인"이며, 왜 s32 취향과 같은 맥인지 근거가 명확합니다.
         </div>
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(310px,1fr))', gap: 22 }}>
