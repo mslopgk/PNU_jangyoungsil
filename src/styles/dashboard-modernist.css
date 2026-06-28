@@ -1,0 +1,363 @@
+/* ============================================================
+   DashModernist — Korean Modernist 오방색 (heritage-as-system)
+   오방색 functional semantic tokens · Swiss modular grid ·
+   geometric 단청-inspired motifs · heritage×modern type duality
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap');
+
+.mod {
+  /* 오방색 — functional semantic tokens (one color per context) */
+  --ob-cheong: #2A5E7E;  /* 청 · EAST · blue   · centers/acceleration */
+  --ob-jeok:   #B23A2A;  /* 적 · SOUTH · red    · transformation/healthcare */
+  --ob-hwang:  #C29A2E;  /* 황 · CENTER · gold · facility/materials */
+  --ob-baek:   #FFFFFF;  /* 백 · WEST · white  · inverted surfaces */
+  --ob-heuk:   #1A1714;  /* 흑 · NORTH · ink   · overview/superiority */
+
+  --mod-bg:    #F6F3EC;
+  --mod-panel: #FFFFFF;
+  --mod-panel2:#FBF9F3;
+  --mod-ink:   #1A1714;
+  --mod-body:  #4A4339;
+  --mod-muted: #8C8475;
+  --mod-line:  #D9D2C2;
+  --mod-line2: #E8E2D4;
+
+  background: var(--mod-bg);
+  color: var(--mod-ink);
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  overflow-x: clip;
+  min-height: 100vh;
+  position: relative;
+}
+.mod * { box-sizing: border-box; }
+.mod-mono { font-family: 'JetBrains Mono', monospace; }
+.mod-disp { font-family: 'Nanum Myeongjo', serif; }
+
+/* atmosphere — subtle 한지 grain (very low), NO gold glow */
+.mod-grain {
+  position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: .022;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.mod-gridbg {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(var(--mod-line2) 1px, transparent 1px),
+    linear-gradient(90deg, var(--mod-line2) 1px, transparent 1px);
+  background-size: 80px 80px;
+  opacity: .35;
+  mask-image: linear-gradient(180deg, #000, transparent 90%);
+}
+
+/* ---------- geometric 단청-inspired bands (modernist, abstract) ---------- */
+.mod-band { height: 14px; width: 100%; }
+.mod-band-tri {
+  background:
+    linear-gradient(135deg, var(--ob-cheong) 25%, transparent 25%) -7px 0,
+    linear-gradient(225deg, var(--ob-cheong) 25%, transparent 25%) -7px 0,
+    linear-gradient(315deg, var(--ob-hwang) 25%, transparent 25%),
+    linear-gradient(45deg,  var(--ob-hwang) 25%, transparent 25%);
+  background-size: 14px 14px;
+}
+.mod-band-dia {
+  background:
+    linear-gradient(45deg, var(--ob-jeok) 25%, transparent 25%, transparent 75%, var(--ob-jeok) 75%) 0 0 / 16px 16px,
+    linear-gradient(45deg, var(--ob-jeok) 25%, transparent 25%, transparent 75%, var(--ob-jeok) 75%) 8px 8px / 16px 16px;
+  height: 16px;
+}
+.mod-band-heuk {
+  height: 6px; background: var(--ob-heuk);
+}
+
+/* ---------- topbar : geometric masthead ---------- */
+.mod-topbar {
+  position: sticky; top: 0; z-index: 50;
+  height: 64px; display: flex; align-items: center; justify-content: space-between;
+  gap: 18px; padding: 0 28px;
+  background: var(--mod-panel);
+  border-bottom: 1px solid var(--mod-line);
+}
+.mod-tb-left { display: flex; align-items: center; gap: 16px; min-width: 0; }
+.mod-tb-sig { font-size: 12px; letter-spacing: .12em; color: var(--mod-muted); font-weight: 500; }
+.mod-obang { display: flex; align-items: center; gap: 4px; padding: 5px 7px; border: 1px solid var(--mod-line); }
+.ob-dot { width: 11px; height: 11px; display: block; }
+.ob-cheong { background: var(--ob-cheong); }
+.ob-jeok   { background: var(--ob-jeok); }
+.ob-hwang  { background: var(--ob-hwang); }
+.ob-baek   { background: var(--ob-baek); border: 1px solid var(--mod-line); }
+.ob-heuk   { background: var(--ob-heuk); }
+.mod-tb-name { font-family: 'Nanum Myeongjo', serif; font-weight: 800; font-size: 18px; letter-spacing: -.01em; white-space: nowrap; }
+.mod-tb-ticker { display: flex; align-items: center; gap: 12px; font-size: 11px; letter-spacing: .08em; color: var(--mod-muted); }
+.mod-tb-sep { color: var(--mod-line); }
+.mod-tb-ok { display: inline-flex; align-items: center; gap: 6px; color: var(--ob-cheong); }
+.mod-dot { width: 7px; height: 7px; border-radius: 50%; display: inline-block; }
+.mod-dot-green { background: #2E8B57; }
+.mod-tb-right { display: flex; align-items: center; gap: 8px; }
+.mod-btn { display: inline-flex; align-items: center; gap: 7px; font-size: 12.5px; font-weight: 500; padding: 8px 14px; border: 1px solid var(--mod-line); background: var(--mod-panel); color: var(--mod-ink); text-decoration: none; transition: background .2s, border-color .2s; }
+.mod-btn:hover { background: var(--mod-panel2); border-color: var(--mod-ink); }
+.mod-btn-solid { background: var(--ob-heuk); color: var(--ob-baek); border-color: var(--ob-heuk); }
+.mod-btn-solid:hover { background: #000; }
+
+/* ---------- body / sidebar ---------- */
+.mod-body { position: relative; z-index: 2; }
+.mod-sidebar {
+  position: fixed; left: 0; top: 64px; bottom: 0; width: 232px;
+  background: var(--mod-panel); border-right: 1px solid var(--mod-line);
+  overflow-y: auto; padding: 22px 0 28px; z-index: 40;
+}
+.mod-side-head { font-size: 11px; letter-spacing: .16em; color: var(--mod-muted); padding: 0 22px 14px; border-bottom: 1px solid var(--mod-line2); }
+.mod-side-nav { display: flex; flex-direction: column; padding: 10px 0; }
+.mod-side-item { display: flex; align-items: center; gap: 12px; padding: 11px 22px; text-decoration: none; color: var(--mod-body); border-left: 3px solid transparent; transition: background .18s, border-color .18s, color .18s; }
+.mod-side-item:hover { background: var(--mod-panel2); color: var(--mod-ink); }
+.mod-side-item.is-active { background: var(--mod-panel2); }
+.mod-side-dot { width: 9px; height: 9px; flex-shrink: 0; }
+.mod-side-num { font-family: 'Nanum Myeongjo', serif; font-weight: 800; font-size: 15px; color: var(--mod-muted); width: 18px; text-align: center; }
+.mod-side-item.is-active .mod-side-num { color: var(--mod-ink); }
+.mod-side-lbl { font-size: 12.5px; letter-spacing: .04em; font-weight: 500; }
+.mod-side-foot { padding: 16px 22px 0; border-top: 1px solid var(--mod-line2); margin-top: 8px; }
+.mod-legend { display: flex; flex-direction: column; gap: 7px; }
+.mod-legend-row { display: flex; align-items: center; gap: 9px; font-size: 10.5px; letter-spacing: .04em; color: var(--mod-muted); }
+.mod-legend-row .ob-dot { width: 10px; height: 10px; }
+
+.mod-main { margin-left: 232px; padding: 30px 38px 90px; max-width: 1480px; }
+
+/* ---------- section frame ---------- */
+.mod-sec { position: relative; padding: 46px 0 30px; }
+.mod-sec + .mod-sec { border-top: 1px solid var(--mod-line2); }
+.mod-sec-accent { height: 3px; width: 64px; margin-bottom: 26px; transform-origin: left center; }
+.mod-sec-head { display: flex; align-items: flex-start; gap: 18px; margin-bottom: 30px; }
+.mod-sec-num { width: 42px; height: 42px; transform: rotate(45deg); border: 1.5px solid var(--ob-heuk); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+.mod-sec-num span { transform: rotate(-45deg); font-family: 'Nanum Myeongjo', serif; font-weight: 800; font-size: 19px; color: var(--ob-heuk); }
+.mod-sec-meta { display: flex; flex-direction: column; gap: 4px; }
+.mod-sec-kicker { font-size: 11px; letter-spacing: .2em; color: var(--mod-muted); font-weight: 500; }
+.mod-sec-title { font-family: 'Nanum Myeongjo', serif; font-weight: 800; font-size: clamp(26px, 3.4vw, 40px); line-height: 1.08; letter-spacing: -.02em; }
+.mod-sec-title em { font-style: normal; color: var(--ob-jeok); }
+.mod-sec-en { font-size: 12px; letter-spacing: .08em; color: var(--mod-muted); }
+
+/* color context helpers */
+.c-cheong { --c: var(--ob-cheong); }
+.c-jeok   { --c: var(--ob-jeok); }
+.c-hwang  { --c: var(--ob-hwang); }
+.c-baek   { --c: var(--ob-heuk); }
+.c-heuk   { --c: var(--ob-heuk); }
+.mod-sec-accent { background: var(--c, var(--ob-heuk)); }
+.mod-side-item .mod-side-dot { background: var(--c, var(--ob-heuk)); }
+
+/* ---------- KPI grid : 5 cells, 5 방색 ---------- */
+.mod-kpi-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.mod-kpi { background: var(--mod-panel); border: 1px solid var(--mod-line); padding: 20px 18px; position: relative; display: flex; flex-direction: column; gap: 8px; }
+.mod-kpi::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--c); }
+.mod-kpi-top { display: flex; align-items: center; justify-content: space-between; }
+.mod-kpi-idx { font-size: 10.5px; letter-spacing: .14em; color: var(--mod-muted); }
+.mod-kpi-dot { width: 10px; height: 10px; background: var(--c); }
+.mod-kpi-num { font-family: 'Nanum Myeongjo', serif; font-weight: 800; font-size: 44px; line-height: 1; letter-spacing: -.03em; color: var(--mod-ink); }
+.mod-kpi-num sup { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 500; color: var(--c); margin-left: 3px; vertical-align: super; }
+.mod-kpi-lbl { font-size: 12.5px; font-weight: 500; color: var(--mod-ink); line-height: 1.4; }
+.mod-kpi-sub { font-size: 10.5px; letter-spacing: .04em; color: var(--mod-muted); }
+/* 백 (WEST/white) → inverted cell */
+.mod-kpi.c-baek { background: var(--ob-heuk); color: var(--ob-baek); border-color: var(--ob-heuk); }
+.mod-kpi.c-baek::before { background: var(--ob-baek); }
+.mod-kpi.c-baek .mod-kpi-idx { color: rgba(255,255,255,.55); }
+.mod-kpi.c-baek .mod-kpi-dot { background: var(--ob-baek); }
+.mod-kpi.c-baek .mod-kpi-num { color: var(--ob-baek); }
+.mod-kpi.c-baek .mod-kpi-num sup { color: var(--ob-baek); opacity: .7; }
+.mod-kpi.c-baek .mod-kpi-lbl { color: var(--ob-baek); }
+.mod-kpi.c-baek .mod-kpi-sub { color: rgba(255,255,255,.6); }
+
+/* ---------- visual panel (control tower) ---------- */
+.mod-vp { position: relative; border: 1px solid var(--mod-line); background: var(--ob-heuk); overflow: hidden; }
+.mod-vp-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .5; }
+.mod-vp-veil { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(26,23,20,.88) 30%, rgba(26,23,20,.5) 72%, rgba(26,23,20,.78)); }
+.mod-vp-body { position: relative; z-index: 2; padding: 34px 36px; display: grid; grid-template-columns: 1.35fr 1fr; gap: 36px; color: var(--ob-baek); }
+.mod-vp-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: .12em; color: var(--ob-hwang); margin-bottom: 16px; }
+.mod-vp-badge .mod-dot { background: var(--ob-hwang); }
+.mod-vp-title { font-family: 'Nanum Myeongjo', serif; font-weight: 800; font-size: clamp(28px, 3.4vw, 44px); line-height: 1.12; letter-spacing: -.02em; }
+.mod-vp-title em { font-style: normal; color: var(--ob-hwang); }
+.mod-vp-desc { font-size: 13px; line-height: 1.8; color: rgba(255,255,255,.78); margin-top: 16px; max-width: 560px; }
+.mod-vp-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 18px; }
+.mod-vp-tag { font-size: 11px; letter-spacing: .03em; padding: 5px 11px; border: 1px solid rgba(255,255,255,.25); color: rgba(255,255,255,.85); }
+.mod-vp-stats { display: flex; flex-direction: column; gap: 14px; align-self: end; }
+.mod-vp-stat { display: flex; align-items: baseline; gap: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,.14); }
+.mod-vp-stat:last-child { border-bottom: 0; }
+.mod-vp-stat-n { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 18px; color: var(--ob-hwang); white-space: nowrap; }
+.mod-vp-stat-l { font-size: 11.5px; color: rgba(255,255,255,.7); line-height: 1.4; }
+
+/* ---------- ACTS : 4 cells, 4 방색 ---------- */
+.mod-acts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.mod-act { background: var(--mod-panel); border: 1px solid var(--mod-line); padding: 26px 22px; position: relative; display: flex; flex-direction: column; gap: 10px; }
+.mod-act::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--c); }
+.mod-act-letter { font-family: 'Nanum Myeongjo', serif; font-weight: 800; font-size: 64px; line-height: .9; color: var(--c); letter-spacing: -.04em; }
+.mod-act-name { font-family: 'Nanum Myeongjo', serif; font-weight: 700; font-size: 19px; }
+.mod-act-ko { font-size: 12.5px; font-weight: 500; color: var(--c); }
+.mod-act-desc { font-size: 12.5px; line-height: 1.7; color: var(--mod-body); margin-top: 4px; }
+
+/* ---------- director ---------- */
+.mod-dir { background: var(--mod-panel); border: 1px solid var(--mod-line); padding: 26px 28px; display: flex; gap: 22px; align-items: flex-start; }
+.mod-dir-mark { width: 56px; height: 56px; transform: rotate(45deg); border: 1.5px solid var(--ob-jeok); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.mod-dir-mark span { transform: rotate(-45deg); font-family: 'Nanum Myeongjo', serif; font-weight: 800; font-size: 22px; color: var(--ob-jeok); }
+.mod-dir-name { font-family: 'Nanum Myeongjo', serif; font-weight: 800; font-size: 19px; }
+.mod-dir-name small { font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 400; color: var(--mod-muted); margin-left: 8px; letter-spacing: .04em; }
+.mod-dir-pos { font-size: 12px; color: var(--mod-muted); margin-top: 3px; }
+.mod-dir-quote { font-family: 'Noto Serif KR', serif; font-size: 14px; line-height: 1.85; color: var(--mod-ink); margin-top: 12px; }
+.mod-dir-meta { font-size: 11px; letter-spacing: .04em; color: var(--ob-jeok); margin-top: 10px; }
+
+/* ---------- heritage mapping ---------- */
+.mod-her { display: flex; flex-direction: column; gap: 12px; }
+.mod-her-row { display: grid; grid-template-columns: 1fr 36px 1fr; gap: 0; align-items: stretch; }
+.mod-her-past, .mod-her-now { padding: 20px 22px; border: 1px solid var(--mod-line); background: var(--mod-panel); display: flex; flex-direction: column; gap: 6px; }
+.mod-her-past { background: var(--mod-panel2); }
+.mod-her-now { border-left: 4px solid var(--c); }
+.mod-her-arrow { display: flex; align-items: center; justify-content: center; color: var(--mod-muted); font-size: 18px; }
+.mod-her-top { display: flex; align-items: baseline; gap: 12px; }
+.mod-her-han { font-family: 'Nanum Myeongjo', serif; font-weight: 800; font-size: 30px; line-height: 1; color: var(--ob-heuk); }
+.mod-her-now .mod-her-han { color: var(--c); }
+.mod-her-yr { font-size: 11px; letter-spacing: .1em; color: var(--mod-muted); }
+.mod-her-name { font-family: 'Nanum Myeongjo', serif; font-weight: 700; font-size: 18px; margin-top: 4px; }
+.mod-her-name span { font-size: 13px; color: var(--mod-muted); margin-left: 6px; font-weight: 400; }
+.mod-her-desc { font-size: 12.5px; line-height: 1.7; color: var(--mod-body); }
+.mod-her-field { font-size: 11.5px; letter-spacing: .03em; color: var(--c); margin-top: 4px; font-weight: 500; }
+.mod-her-past .mod-her-field { color: var(--mod-muted); }
+.mod-her-icon { font-size: 20px; }
+
+/* ---------- centers ---------- */
+.mod-centers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.mod-center { background: var(--mod-panel); border: 1px solid var(--mod-line); overflow: hidden; display: flex; flex-direction: column; }
+.mod-center-img { width: 100%; height: 150px; object-fit: cover; display: block; }
+.mod-center-body { padding: 20px 22px; display: flex; flex-direction: column; gap: 8px; border-top: 3px solid var(--c); }
+.mod-center-anchor { font-size: 11px; letter-spacing: .04em; color: var(--c); font-weight: 500; display: flex; align-items: center; gap: 7px; }
+.mod-center-name { font-family: 'Nanum Myeongjo', serif; font-weight: 800; font-size: 20px; }
+.mod-center-en { font-size: 11px; letter-spacing: .04em; color: var(--mod-muted); }
+.mod-center-desc { font-size: 12.5px; line-height: 1.7; color: var(--mod-body); }
+.mod-center-points { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; padding-top: 12px; border-top: 1px solid var(--mod-line2); }
+.mod-center-points span { font-size: 10.5px; padding: 4px 9px; border: 1px solid var(--mod-line); color: var(--mod-body); }
+.mod-infra-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 16px; }
+.mod-infra-card { background: var(--mod-panel2); border: 1px solid var(--mod-line); padding: 18px 20px; display: flex; flex-direction: column; gap: 6px; border-left: 3px solid var(--ob-heuk); }
+.mod-infra-tag { font-size: 11px; letter-spacing: .04em; color: var(--mod-muted); }
+.mod-infra-name { font-family: 'Nanum Myeongjo', serif; font-weight: 700; font-size: 16px; }
+.mod-infra-desc { font-size: 12px; line-height: 1.65; color: var(--mod-body); }
+
+/* ---------- projects table ---------- */
+.mod-proj-table { width: 100%; border-collapse: collapse; background: var(--mod-panel); border: 1px solid var(--mod-line); }
+.mod-proj-table th, .mod-proj-table td { text-align: left; padding: 12px 16px; font-size: 12.5px; border-bottom: 1px solid var(--mod-line2); }
+.mod-proj-table th { font-size: 10.5px; letter-spacing: .12em; color: var(--mod-muted); font-weight: 500; background: var(--mod-panel2); border-bottom: 1px solid var(--mod-line); }
+.mod-proj-table tbody tr:last-child td { border-bottom: 0; }
+.mod-proj-name { font-weight: 500; color: var(--mod-ink); }
+.mod-proj-tag { font-size: 10.5px; padding: 3px 8px; border: 1px solid; letter-spacing: .03em; white-space: nowrap; }
+.mod-proj-tag.b { color: var(--ob-cheong); border-color: var(--ob-cheong); }
+.mod-proj-tag.m { color: var(--ob-jeok); border-color: var(--ob-jeok); }
+.mod-proj-tag.s { color: var(--ob-hwang); border-color: var(--ob-hwang); }
+.mod-proj-status { display: inline-flex; align-items: center; gap: 7px; font-size: 11.5px; }
+.mod-proj-status.run { color: #2E7D5B; }
+.mod-proj-status.plan { color: var(--ob-hwang); }
+.mod-status-dot { width: 7px; height: 7px; border-radius: 50%; }
+.mod-status-dot.green { background: #2E8B57; }
+.mod-status-dot.amber { background: var(--ob-hwang); }
+
+/* ---------- partners ---------- */
+.mod-partners { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.mod-partner { background: var(--mod-panel); border: 1px solid var(--mod-line); padding: 22px 20px; display: flex; flex-direction: column; gap: 10px; text-decoration: none; color: inherit; position: relative; }
+.mod-partner::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--c); }
+.mod-partner-top { display: flex; align-items: center; gap: 12px; }
+.mod-partner-logo { width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; font-family: 'Nanum Myeongjo', serif; font-weight: 800; font-size: 20px; color: var(--ob-baek); background: var(--c); flex-shrink: 0; }
+.mod-partner-name { font-family: 'Nanum Myeongjo', serif; font-weight: 700; font-size: 16px; }
+.mod-partner-tag { font-size: 10.5px; letter-spacing: .04em; color: var(--mod-muted); }
+.mod-partner-desc { font-size: 12px; line-height: 1.7; color: var(--mod-body); }
+.mod-partner-desc strong { color: var(--mod-ink); font-weight: 700; }
+.mod-partner-meta { font-size: 11px; letter-spacing: .03em; color: var(--c); margin-top: auto; padding-top: 10px; border-top: 1px solid var(--mod-line2); display: flex; align-items: center; gap: 7px; }
+
+/* ---------- facility (IT관) ---------- */
+.mod-it { display: grid; grid-template-columns: 1.1fr 1fr; gap: 0; border: 1px solid var(--mod-line); background: var(--mod-panel); }
+.mod-it-text { padding: 32px 34px; }
+.mod-it-badge { display: inline-flex; align-items: center; gap: 8px; font-size: 11px; letter-spacing: .12em; color: var(--ob-hwang); margin-bottom: 14px; }
+.mod-it-title { font-family: 'Nanum Myeongjo', serif; font-weight: 800; font-size: clamp(24px, 2.8vw, 34px); line-height: 1.18; letter-spacing: -.02em; }
+.mod-it-title em { font-style: normal; color: var(--ob-hwang); }
+.mod-it-desc { font-size: 13px; line-height: 1.8; color: var(--mod-body); margin-top: 14px; }
+.mod-it-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 22px; }
+.mod-it-stat { border: 1px solid var(--mod-line); padding: 12px 13px; border-top: 3px solid var(--ob-hwang); }
+.mod-it-stat-tag { font-size: 10px; letter-spacing: .08em; color: var(--mod-muted); }
+.mod-it-stat-n { font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 22px; color: var(--mod-ink); margin-top: 4px; line-height: 1; }
+.mod-it-stat-n span { font-size: 12px; color: var(--mod-muted); margin-left: 2px; }
+.mod-it-stat-d { font-size: 10.5px; color: var(--mod-muted); margin-top: 4px; }
+.mod-it-image { min-height: 280px; overflow: hidden; }
+.mod-it-image img { width: 100%; height: 100%; min-height: 280px; object-fit: cover; display: block; }
+
+/* ---------- faculty ---------- */
+.mod-fac { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.mod-fac-card { background: var(--mod-panel); border: 1px solid var(--mod-line); padding: 18px 20px; display: flex; align-items: center; gap: 14px; }
+.mod-fac-avatar { width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: var(--mod-panel2); border: 1px solid var(--mod-line); color: var(--ob-heuk); flex-shrink: 0; }
+.mod-fac-name { font-family: 'Nanum Myeongjo', serif; font-weight: 700; font-size: 15px; }
+.mod-fac-area { font-size: 11.5px; color: var(--mod-body); margin-top: 2px; }
+.mod-fac-lab { font-size: 10.5px; letter-spacing: .04em; color: var(--mod-muted); margin-top: 2px; }
+
+/* ---------- notices ---------- */
+.mod-notice { display: grid; grid-template-columns: 1fr 1fr; gap: 0; background: var(--mod-panel); border: 1px solid var(--mod-line); }
+.mod-notice-item { display: flex; align-items: center; gap: 14px; padding: 15px 20px; border-bottom: 1px solid var(--mod-line2); border-right: 1px solid var(--mod-line2); }
+.mod-notice-item:nth-child(2n) { border-right: 0; }
+.mod-notice-item:nth-last-child(-n+2) { border-bottom: 0; }
+.mod-notice-item:nth-last-child(1):nth-child(odd) { border-bottom: 0; }
+.mod-notice-idx { font-size: 11px; letter-spacing: .08em; color: var(--mod-muted); width: 22px; flex-shrink: 0; }
+.mod-notice-icon { width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--mod-line); color: var(--ob-heuk); flex-shrink: 0; }
+.mod-notice-icon.c-cheong { color: var(--ob-cheong); border-color: var(--ob-cheong); }
+.mod-notice-icon.c-jeok { color: var(--ob-jeok); border-color: var(--ob-jeok); }
+.mod-notice-icon.c-hwang { color: var(--ob-hwang); border-color: var(--ob-hwang); }
+.mod-notice-body { min-width: 0; }
+.mod-notice-title { font-size: 13px; font-weight: 500; color: var(--mod-ink); line-height: 1.4; }
+.mod-notice-title .mod-notice-tag { font-size: 10px; padding: 2px 7px; background: var(--ob-jeok); color: var(--ob-baek); margin-left: 7px; letter-spacing: .03em; }
+.mod-notice-date { font-size: 10.5px; letter-spacing: .03em; color: var(--mod-muted); margin-top: 3px; }
+
+/* ---------- footer ---------- */
+.mod-footer { margin-top: 50px; padding-top: 28px; border-top: 2px solid var(--ob-heuk); display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+.mod-footer-big { font-family: 'Nanum Myeongjo', serif; font-weight: 800; font-size: clamp(22px, 2.6vw, 34px); letter-spacing: -.02em; line-height: 1.1; }
+.mod-footer-big em { font-style: normal; color: var(--ob-jeok); }
+.mod-footer-info { font-size: 11.5px; line-height: 1.85; color: var(--mod-muted); text-align: right; }
+.mod-footer-mark { font-size: 10.5px; letter-spacing: .12em; color: var(--ob-heuk); margin-top: 8px; }
+
+/* ---------- pill nav ---------- */
+.mod-pill { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); z-index: 80; display: flex; align-items: center; gap: 0; background: var(--ob-heuk); border: 1px solid var(--ob-heuk); box-shadow: 0 8px 30px rgba(26,23,20,.25); }
+.mod-pill-link { display: inline-flex; align-items: center; gap: 7px; padding: 9px 16px; font-size: 12px; font-weight: 500; color: var(--ob-baek); text-decoration: none; letter-spacing: .03em; transition: background .18s; }
+.mod-pill-link:hover { background: rgba(255,255,255,.12); }
+.mod-pill-sep { width: 1px; height: 16px; background: rgba(255,255,255,.25); }
+
+/* ---------- grid-2 helper ---------- */
+.mod-grid-2 { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; align-items: start; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 1440px) {
+  .mod-main { padding: 28px 30px 90px; }
+}
+@media (max-width: 1023px) {
+  .mod-sidebar { width: 64px; }
+  .mod-side-head, .mod-side-lbl, .mod-side-foot { display: none; }
+  .mod-side-item { justify-content: center; padding: 13px 0; border-left: 0; border-right: 3px solid transparent; }
+  .mod-side-item.is-active { border-right-color: var(--c); }
+  .mod-side-num { display: none; }
+  .mod-main { margin-left: 64px; }
+  .mod-kpi-grid { grid-template-columns: repeat(3, 1fr); }
+  .mod-acts { grid-template-columns: repeat(2, 1fr); }
+  .mod-centers { grid-template-columns: 1fr; }
+  .mod-partners { grid-template-columns: repeat(2, 1fr); }
+  .mod-fac { grid-template-columns: repeat(2, 1fr); }
+  .mod-vp-body { grid-template-columns: 1fr; }
+  .mod-it { grid-template-columns: 1fr; }
+  .mod-it-stats { grid-template-columns: repeat(2, 1fr); }
+  .mod-grid-2 { grid-template-columns: 1fr; }
+}
+@media (max-width: 767px) {
+  .mod-sidebar { display: none; }
+  .mod-main { margin-left: 0; padding: 22px 18px 90px; }
+  .mod-topbar { padding: 0 16px; gap: 10px; }
+  .mod-tb-ticker { display: none; }
+  .mod-tb-right .mod-btn:nth-child(2) { display: none; }
+  .mod-kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .mod-acts { grid-template-columns: 1fr; }
+  .mod-partners { grid-template-columns: 1fr; }
+  .mod-fac { grid-template-columns: 1fr; }
+  .mod-notice { grid-template-columns: 1fr; }
+  .mod-notice-item { border-right: 0; }
+  .mod-notice-item:nth-last-child(2) { border-bottom: 1px solid var(--mod-line2); }
+  .mod-her-row { grid-template-columns: 1fr; }
+  .mod-her-arrow { transform: rotate(90deg); padding: 4px 0; }
+  .mod-it-stats { grid-template-columns: 1fr 1fr; }
+  .mod-sec-head { flex-wrap: wrap; }
+  .mod-footer-info { text-align: left; }
+}

@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Nanum+Pen+Script&display=swap');
+
+/* ============================================================
+   Dash Skeuomorphic Research Notebook — 실험 노트 (lab-book)
+   Gene: G1 제도적 권위(학술 실물) + G5 한국어 타이포
+   ============================================================ */
+.dnb {
+  --nb-bg: #F4ECCF;
+  --nb-paper: #FBF5DE;
+  --nb-paper2: #F6EFC9;
+  --nb-ink: #2A2118;
+  --nb-body: #4A3E2D;
+  --nb-muted: #8A7B5C;
+  --nb-line: #D9C99C;
+  --nb-grid: rgba(120,100,40,.16);
+  --nb-red: #B33A2A;
+  --nb-blue: #1E4A7A;
+  --nb-tape: rgba(180,170,120,.5);
+  background: var(--nb-bg);
+  background-image: linear-gradient(var(--nb-grid) 1px, transparent 1px), linear-gradient(90deg, var(--nb-grid) 1px, transparent 1px);
+  background-size: 26px 26px;
+  color: var(--nb-ink);
+  font-family: 'Noto Serif KR', serif;
+  overflow-x: clip;
+}
+.dnb * { box-sizing: border-box; }
+.dnb .mono { font-family: 'JetBrains Mono', monospace; }
+.dnb .hand { font-family: 'Nanum Pen Script', 'Caveat', cursive; }
+.dnb .lat-hand { font-family: 'Caveat', cursive; }
+
+/* paper note */
+.dnb-note { background: var(--nb-paper); border: 1px solid var(--nb-line); border-radius: 3px; box-shadow: 0 6px 18px rgba(80,60,20,.12); position: relative; }
+.dnb-tape { position: absolute; top: -10px; left: 50%; transform: translateX(-50%) rotate(-2deg); width: 90px; height: 22px; background: var(--nb-tape); box-shadow: 0 2px 6px rgba(80,60,20,.12); }
+.dnb-tape.l { left: 24px; transform: rotate(-4deg); }
+.dnb-tape.r { left: auto; right: 24px; transform: rotate(3deg); }
+
+/* red margin rule (notebook left margin) */
+.dnb-margin { border-left: 2px solid var(--nb-red); padding-left: 18px; }
+
+/* topbar = notebook header */
+.dnb-top { position: sticky; top: 0; z-index: 50; background: var(--nb-paper); border-bottom: 2px solid var(--nb-ink); display: flex; align-items: center; padding: 0 28px; height: 58px; }
+.dnb-top .brand { display: flex; align-items: center; gap: 14px; }
+.dnb-top .stamp { width: 38px; height: 38px; border: 2px solid var(--nb-red); border-radius: 50%; display: grid; place-items: center; font-family: 'Nanum Myeongjo', serif; font-weight: 800; font-size: 16px; color: var(--nb-red); transform: rotate(-6deg); }
+.dnb-top .nm { font-family: 'Nanum Myeongjo', serif; font-weight: 800; font-size: 17px; }
+.dnb-top .nm small { display: block; font-family: 'Caveat', cursive; font-size: 15px; color: var(--nb-blue); margin-top: -2px; }
+.dnb-top .crumb { margin-left: 26px; padding-left: 26px; border-left: 1px solid var(--nb-line); font-family: 'Caveat', cursive; font-size: 17px; color: var(--nb-muted); }
+.dnb-top .actions { margin-left: auto; display: flex; align-items: center; gap: 14px; }
+.dnb-top .cta { padding: 8px 18px; border: 2px solid var(--nb-ink); background: var(--nb-paper); font-family: 'Nanum Myeongjo', serif; font-weight: 800; font-size: 13px; cursor: pointer; border-radius: 2px; box-shadow: 3px 3px 0 var(--nb-ink); }
+
+/* layout */
+.dnb-layout { display: flex; align-items: flex-start; padding: 26px 28px 70px; gap: 22px; max-width: 1440px; margin: 0 auto; }
+.dnb-side { width: 218px; flex-shrink: 0; position: sticky; top: 84px; padding: 22px 18px; }
+.dnb-side .sh { font-family: 'Caveat', cursive; font-size: 19px; color: var(--nb-blue); margin: 12px 0 8px; border-bottom: 1px dashed var(--nb-line); padding-bottom: 4px; }
+.dnb-side .si { display: flex; align-items: center; gap: 10px; padding: 8px 6px; font-size: 14px; font-weight: 600; color: var(--nb-body); cursor: pointer; font-family: 'Noto Serif KR', serif; }
+.dnb-side .si .ck { font-family: 'Caveat', cursive; color: var(--nb-red); font-size: 18px; }
+.dnb-side .si.active { color: var(--nb-ink); }
+.dnb-side .si.active .ck { color: var(--nb-blue); }
+.dnb-side .annot { margin-top: 16px; font-family: 'Nanum Pen Script', cursive; font-size: 16px; color: var(--nb-red); line-height: 1.5; transform: rotate(-1deg); }
+.dnb-side .annot::before { content: '※ '; }
+
+.dnb-main { flex: 1; min-width: 0; }
+
+/* page header */
+.dnb-phead { padding: 28px 30px; margin-bottom: 22px; }
+.dnb-phead .date { font-family: 'Caveat', cursive; font-size: 18px; color: var(--nb-blue); }
+.dnb-phead h1 { font-family: 'Nanum Myeongjo', serif; font-size: 34px; font-weight: 800; margin: 6px 0 8px; letter-spacing: -.02em; }
+.dnb-phead h1 em { font-style: normal; color: var(--nb-red); border-bottom: 3px solid var(--nb-red); }
+.dnb-phead p { font-size: 14px; line-height: 1.75; color: var(--nb-body); max-width: 560px; }
+.dnb-phead .scribble { position: absolute; top: 18px; right: 24px; font-family: 'Caveat', cursive; font-size: 22px; color: var(--nb-red); transform: rotate(-4deg); }
+
+/* KPI — jotted data cells */
+.dnb-kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 22px; }
+.dnb-kpi { padding: 18px 16px; position: relative; }
+.dnb-kpi .lbl { font-family: 'Caveat', cursive; font-size: 18px; color: var(--nb-blue); line-height: 1; }
+.dnb-kpi .num { font-family: 'Nanum Myeongjo', serif; font-size: 40px; font-weight: 800; line-height: 1; margin-top: 10px; letter-spacing: -.02em; }
+.dnb-kpi .num sup { font-size: 16px; color: var(--nb-red); margin-left: 2px; }
+.dnb-kpi .sub { font-family: 'Caveat', cursive; font-size: 15px; color: var(--nb-muted); margin-top: 8px; }
+.dnb-kpi .circ { position: absolute; top: 14px; right: 12px; width: 30px; height: 30px; border: 2px solid var(--nb-red); border-radius: 50%; opacity: .3; transform: rotate(-8deg); }
+
+/* hero — pasted photo + notes */
+.dnb-hero { padding: 26px; margin-bottom: 22px; display: grid; grid-template-columns: 1.4fr 1fr; gap: 24px; align-items: center; }
+.dnb-hero .tag { font-family: 'Nanum Pen Script', cursive; font-size: 18px; color: var(--nb-red); }
+.dnb-hero h2 { font-family: 'Nanum Myeongjo', serif; font-size: 28px; font-weight: 800; line-height: 1.2; margin: 12px 0 10px; }
+.dnb-hero h2 em { font-style: normal; color: var(--nb-blue); }
+.dnb-hero p { font-size: 13.5px; line-height: 1.85; color: var(--nb-body); }
+.dnb-hero .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.dnb-hero .tags span { font-family: 'Caveat', cursive; font-size: 16px; padding: 3px 12px; border: 1.5px solid var(--nb-ink); border-radius: 100px; color: var(--nb-ink); background: var(--nb-paper2); }
+.dnb-hero .photo { position: relative; transform: rotate(1.5deg); }
+.dnb-hero .photo img { width: 100%; height: 220px; object-fit: cover; border: 6px solid #fff; box-shadow: 0 8px 22px rgba(80,60,20,.2); filter: sepia(.15) saturate(.95); }
+.dnb-hero .photo .cap { position: absolute; bottom: -14px; right: -8px; font-family: 'Caveat', cursive; font-size: 16px; color: var(--nb-blue); background: var(--nb-paper); padding: 2px 10px; border: 1px solid var(--nb-line); transform: rotate(-3deg); }
+
+/* section title — handwritten */
+.dnb-stitle { font-family: 'Nanum Myeongjo', serif; font-size: 22px; font-weight: 800; margin: 26px 0 14px; display: flex; align-items: center; gap: 12px; }
+.dnb-stitle .n { font-family: 'Caveat', cursive; font-size: 22px; color: var(--nb-red); }
+.dnb-stitle .ul { flex: 1; height: 0; border-bottom: 2px wavy var(--nb-blue); border-bottom-style: solid; opacity: .4; }
+.dnb-stitle .ul { border-bottom: 2px dashed var(--nb-line); }
+
+/* ACTS — 4 notes */
+.dnb-acts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 22px; }
+.dnb-act { padding: 22px 18px; }
+.dnb-act .ltr { font-family: 'Nanum Myeongjo', serif; font-size: 52px; font-weight: 800; line-height: 1; color: var(--nb-red); }
+.dnb-act .ltr.b { color: var(--nb-blue); }
+.dnb-act .nm { font-size: 15px; font-weight: 700; margin-top: 12px; }
+.dnb-act .ko { font-family: 'Caveat', cursive; font-size: 17px; color: var(--nb-blue); }
+.dnb-act .ds { font-size: 12.5px; line-height: 1.7; color: var(--nb-body); margin-top: 10px; }
+
+/* heritage — lab entries with pasted images */
+.dnb-heritage { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 22px; }
+.dnb-h { padding: 22px; }
+.dnb-h .top { display: flex; align-items: baseline; gap: 12px; }
+.dnb-h .han { font-family: 'Nanum Myeongjo', serif; font-size: 28px; color: var(--nb-red); font-weight: 800; }
+.dnb-h .yr { font-family: 'Caveat', cursive; font-size: 17px; color: var(--nb-muted); }
+.dnb-h .nm { font-family: 'Nanum Myeongjo', serif; font-size: 22px; font-weight: 800; margin-top: 12px; }
+.dnb-h .nm span { font-size: 14px; color: var(--nb-muted); margin-left: 6px; }
+.dnb-h .ds { font-size: 12.5px; line-height: 1.75; color: var(--nb-body); margin-top: 10px; }
+.dnb-h .field { margin-top: 12px; font-family: 'Nanum Pen Script', cursive; font-size: 17px; color: var(--nb-blue); }
+.dnb-h .field::before { content: '→ '; color: var(--nb-red); }
+
+/* research — 3 photo notes */
+.dnb-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 22px; }
+.dnb-card { overflow: hidden; }
+.dnb-card .img { height: 120px; overflow: hidden; border-bottom: 1px solid var(--nb-line); position: relative; }
+.dnb-card .img img { width: 100%; height: 100%; object-fit: cover; filter: sepia(.2) saturate(.9); }
+.dnb-card .bd { padding: 20px; }
+.dnb-card .anchor { font-family: 'Caveat', cursive; font-size: 17px; color: var(--nb-red); }
+.dnb-card .nm { font-family: 'Nanum Myeongjo', serif; font-size: 20px; font-weight: 800; margin-top: 6px; }
+.dnb-card .ds { font-size: 12.5px; line-height: 1.75; color: var(--nb-body); margin-top: 10px; }
+.dnb-card .pts { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--nb-line); }
+.dnb-card .pts div { font-size: 12.5px; color: var(--nb-body); padding: 3px 0; }
+.dnb-card .pts div::before { content: '✓ '; color: var(--nb-blue); font-family: 'Caveat', cursive; }
+
+/* partners — list with checkboxes */
+.dnb-partners { padding: 22px; margin-bottom: 22px; }
+.dnb-partners .h { font-family: 'Nanum Myeongjo', serif; font-size: 18px; font-weight: 800; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid var(--nb-ink); }
+.dnb-partner { display: grid; grid-template-columns: 40px 1fr 1fr auto; gap: 14px; align-items: center; padding: 12px 0; border-bottom: 1px dashed var(--nb-line); }
+.dnb-partner:last-child { border-bottom: none; }
+.dnb-partner .ck { font-family: 'Caveat', cursive; font-size: 22px; color: var(--nb-blue); }
+.dnb-partner .nm { font-family: 'Nanum Myeongjo', serif; font-size: 16px; font-weight: 800; }
+.dnb-partner .nm small { display: block; font-family: 'Caveat', cursive; font-size: 15px; color: var(--nb-muted); font-weight: 400; }
+.dnb-partner .ct { font-size: 13px; color: var(--nb-body); }
+.dnb-partner .dt { font-family: 'Caveat', cursive; font-size: 16px; color: var(--nb-red); }
+
+/* notes */
+.dnb-notes { display: grid; grid-template-columns: 1.4fr 1fr; gap: 14px; }
+.dnb-note-card { padding: 22px; }
+.dnb-note-card .h { font-family: 'Nanum Myeongjo', serif; font-size: 16px; font-weight: 800; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+.dnb-note-card .it { display: grid; grid-template-columns: 60px 1fr; gap: 12px; padding: 8px 0; border-bottom: 1px dashed var(--nb-line); }
+.dnb-note-card .it:last-child { border-bottom: none; }
+.dnb-note-card .it .d { font-family: 'Caveat', cursive; font-size: 16px; color: var(--nb-blue); }
+.dnb-note-card .it .t { font-size: 13px; color: var(--nb-body); }
+.dnb-note-card .it .t b { color: var(--nb-ink); }
+
+/* footer */
+.dnb-foot { padding: 26px; margin-top: 22px; text-align: center; }
+.dnb-foot .sig { font-family: 'Nanum Pen Script', cursive; font-size: 28px; color: var(--nb-red); transform: rotate(-2deg); display: inline-block; }
+.dnb-foot .info { font-family: 'Caveat', cursive; font-size: 16px; color: var(--nb-muted); margin-top: 10px; line-height: 1.6; }
+
+@media (max-width: 1024px) {
+  .dnb-side { display: none; }
+  .dnb-kpis, .dnb-acts, .dnb-heritage, .dnb-cards { grid-template-columns: 1fr 1fr; }
+  .dnb-hero { grid-template-columns: 1fr; }
+  .dnb-notes { grid-template-columns: 1fr; }
+  .dnb-partner { grid-template-columns: 30px 1fr; }
+  .dnb-partner .ct, .dnb-partner .dt { grid-column: 2; }
+}

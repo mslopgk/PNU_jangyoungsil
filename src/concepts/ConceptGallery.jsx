@@ -56,7 +56,17 @@ export default function ConceptGallery() {
             </Link>
           ))}
         </div>
+
+        <div style={{ marginTop: 44, display: 'flex', gap: 16, flexWrap: 'wrap' }}>
+          <Link to="/dash" style={linkStyle}>대시보드형 시안 15개 →</Link>
+          <Link to="/" style={linkStyle}>← 원본 사이트</Link>
+        </div>
       </div>
     </div>
   )
+}
+
+const linkStyle = {
+  textDecoration: 'none', color: '#94A3C4', fontSize: 13.5, fontWeight: 600,
+  padding: '12px 18px', borderRadius: 12, border: '1px solid rgba(255,255,255,.1)', background: '#0E1322',
 }

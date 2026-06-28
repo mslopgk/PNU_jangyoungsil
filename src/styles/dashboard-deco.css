@@ -1,0 +1,150 @@
+/* ============================================================
+   Dash Art Deco — 기하학적 프레스티지 (1920s Civic Grandeur)
+   Gene: G1 제도적 권위(의례적 장엄) + G4 정돈된 폴리시
+   ============================================================ */
+.dde {
+  --de-bg: #F3EAD3;
+  --de-bg2: #ECE0C2;
+  --de-panel: #FBF5E4;
+  --de-ink: #1E1610;
+  --de-body: #4A3D2C;
+  --de-muted: #8A7B5E;
+  --de-line: #D9C9A4;
+  --de-gold: #A67C1E;
+  --de-goldL: #CDA43E;
+  --de-emerald: #1E5638;
+  --de-burgundy: #5C1A1B;
+  background: var(--de-bg);
+  background-image: repeating-linear-gradient(45deg, rgba(166,124,30,.025) 0 2px, transparent 2px 12px);
+  color: var(--de-ink);
+  font-family: 'Noto Serif KR', serif;
+  overflow-x: clip;
+}
+.dde * { box-sizing: border-box; }
+.dde .mono { font-family: 'JetBrains Mono', monospace; }
+.dde .disp { font-family: 'Cormorant Garamond', serif; }
+
+/* deco divider ◆ — — ◆ */
+.dde-div { display: flex; align-items: center; justify-content: center; gap: 14px; color: var(--de-gold); }
+.dde-div::before, .dde-div::after { content: ''; height: 1px; background: var(--de-gold); flex: 1; max-width: 120px; }
+
+/* panel — cream, gold double border, cut corners */
+.dde-panel { background: var(--de-panel); border: 1px solid var(--de-gold); position: relative; }
+.dde-panel.framed { box-shadow: 0 0 0 4px var(--de-panel), 0 0 0 5px var(--de-gold); }
+
+/* topbar */
+.dde-top { position: sticky; top: 0; z-index: 50; background: var(--de-ink); color: var(--de-panel); border-bottom: 3px double var(--de-gold); display: flex; align-items: center; padding: 0 28px; height: 60px; }
+.dde-top .brand { display: flex; align-items: center; gap: 14px; }
+.dde-top .logo { width: 38px; height: 38px; border: 1.5px solid var(--de-gold); display: grid; place-items: center; font-family: 'Nanum Myeongjo', serif; font-weight: 800; font-size: 17px; color: var(--de-goldL); transform: rotate(45deg); }
+.dde-top .logo span { transform: rotate(-45deg); }
+.dde-top .nm { font-family: 'Cormorant Garamond', serif; font-weight: 600; font-size: 19px; letter-spacing: .02em; }
+.dde-top .nm small { display: block; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 8.5px; color: var(--de-goldL); letter-spacing: .18em; margin-top: 2px; }
+.dde-top .crumb { margin-left: 28px; padding-left: 28px; border-left: 1px solid rgba(205,164,62,.3); font-family: 'JetBrains Mono', monospace; font-size: 10px; color: rgba(251,245,228,.6); letter-spacing: .1em; }
+.dde-top .actions { margin-left: auto; display: flex; align-items: center; gap: 16px; }
+.dde-top .cta { padding: 9px 20px; border: 1px solid var(--de-gold); color: var(--de-goldL); font-size: 12px; font-weight: 700; letter-spacing: .06em; cursor: pointer; }
+
+/* layout */
+.dde-layout { display: flex; align-items: flex-start; padding: 28px; gap: 24px; max-width: 1440px; margin: 0 auto; }
+.dde-side { width: 230px; flex-shrink: 0; position: sticky; top: 88px; padding: 22px 18px; }
+.dde-side .sh { text-align: center; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; color: var(--de-gold); margin: 14px 0 12px; }
+.dde-side .si { display: flex; align-items: center; gap: 12px; padding: 11px 14px; font-size: 13px; font-weight: 600; color: var(--de-body); margin-bottom: 4px; cursor: pointer; border: 1px solid transparent; }
+.dde-side .si .d { color: var(--de-gold); font-size: 9px; }
+.dde-side .si:hover { color: var(--de-ink); border-color: var(--de-line); }
+.dde-side .si.active { color: var(--de-ink); background: var(--de-bg2); border-color: var(--de-gold); }
+.dde-side .si.active .d { color: var(--de-burgundy); }
+.dde-side .medallion { margin: 18px auto 0; width: 90px; height: 90px; border: 1.5px solid var(--de-gold); border-radius: 50%; display: grid; place-items: center; position: relative; }
+.dde-side .medallion::before { content: ''; position: absolute; inset: 5px; border: 1px solid var(--de-gold); border-radius: 50%; }
+.dde-side .medallion .y { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 700; color: var(--de-gold); }
+.dde-side .medallion small { font-family: 'JetBrains Mono', monospace; font-size: 7.5px; color: var(--de-muted); letter-spacing: .12em; }
+
+.dde-main { flex: 1; min-width: 0; }
+
+/* page header — centered, monumental */
+.dde-phead { text-align: center; padding: 40px 28px 32px; margin-bottom: 24px; }
+.dde-phead .kicker { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; color: var(--de-gold); }
+.dde-phead h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(40px, 6vw, 72px); font-weight: 700; margin: 12px 0; letter-spacing: .01em; line-height: 1.05; }
+.dde-phead h1 em { font-style: italic; color: var(--de-gold); }
+.dde-phead p { font-size: 14px; color: var(--de-body); max-width: 560px; margin: 14px auto 0; line-height: 1.8; }
+.dde-phead .orn { margin-top: 18px; }
+
+/* KPI — medallion tiles */
+.dde-kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-bottom: 28px; }
+.dde-kpi { padding: 22px 14px; text-align: center; }
+.dde-kpi .n { font-family: 'Cormorant Garamond', serif; font-size: 46px; font-weight: 700; line-height: 1; color: var(--de-ink); }
+.dde-kpi .n sup { font-size: 16px; color: var(--de-gold); margin-left: 2px; }
+.dde-kpi .l { font-size: 12.5px; font-weight: 600; color: var(--de-body); margin-top: 12px; }
+.dde-kpi .s { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--de-muted); margin-top: 3px; letter-spacing: .06em; }
+.dde-kpi .sep { width: 30px; height: 1px; background: var(--de-gold); margin: 10px auto 0; }
+
+/* section title — centered deco */
+.dde-stitle { text-align: center; margin: 32px 0 18px; }
+.dde-stitle .n { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: var(--de-gold); }
+.dde-stitle h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 700; margin: 4px 0; letter-spacing: .01em; }
+.dde-stitle h2 em { font-style: italic; color: var(--de-gold); }
+
+/* ACTS — 4 medallion cells */
+.dde-acts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 24px; }
+.dde-act { padding: 26px 18px; text-align: center; }
+.dde-act .ltr { width: 64px; height: 64px; margin: 0 auto 16px; border: 1.5px solid var(--de-gold); border-radius: 50%; display: grid; place-items: center; font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 700; color: var(--de-gold); position: relative; }
+.dde-act .ltr::before { content: ''; position: absolute; inset: 4px; border: 1px solid var(--de-gold); border-radius: 50%; opacity: .4; }
+.dde-act .nm { font-size: 15px; font-weight: 700; }
+.dde-act .ko { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; color: var(--de-gold); margin-top: 2px; }
+.dde-act .ds { font-size: 12px; line-height: 1.7; color: var(--de-body); margin-top: 12px; }
+
+/* heritage — symmetric framed cards */
+.dde-heritage { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-bottom: 24px; }
+.dde-h { padding: 24px; text-align: center; position: relative; }
+.dde-h .han { font-family: 'Nanum Myeongjo', serif; font-size: 28px; color: var(--de-gold); opacity: .6; }
+.dde-h .yr { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 14px; color: var(--de-muted); margin-top: 4px; }
+.dde-h .nm { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; margin-top: 10px; }
+.dde-h .nm span { font-size: 15px; color: var(--de-muted); margin-left: 6px; }
+.dde-h .ds { font-size: 12.5px; line-height: 1.75; color: var(--de-body); margin-top: 12px; max-width: 360px; margin-left: auto; margin-right: auto; }
+.dde-h .field { margin-top: 14px; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; color: var(--de-burgundy); }
+.dde-h .field::before, .dde-h .field::after { content: '◆'; color: var(--de-gold); font-size: 9px; margin: 0 8px; vertical-align: middle; }
+
+/* research — 3 framed cards */
+.dde-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 24px; }
+.dde-card { overflow: hidden; }
+.dde-card .img { height: 110px; border-bottom: 1px solid var(--de-gold); overflow: hidden; position: relative; }
+.dde-card .img img { width: 100%; height: 100%; object-fit: cover; filter: sepia(.25) saturate(.9); }
+.dde-card .img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent, rgba(243,234,211,.3)); }
+.dde-card .bd { padding: 22px 20px; text-align: center; }
+.dde-card .anchor { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; color: var(--de-gold); }
+.dde-card .nm { font-family: 'Cormorant Garamond', serif; font-size: 21px; font-weight: 700; margin-top: 6px; }
+.dde-card .ds { font-size: 12.5px; line-height: 1.75; color: var(--de-body); margin-top: 12px; }
+.dde-card .pts { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--de-line); display: flex; flex-direction: column; gap: 5px; }
+.dde-card .pts div { font-size: 11.5px; color: var(--de-body); }
+.dde-card .pts div::before { content: '◆ '; color: var(--de-gold); font-size: 8px; }
+
+/* partners — 3 medallion cards */
+.dde-partners { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 24px; }
+.dde-partner { padding: 26px 22px; text-align: center; }
+.dde-partner .ini { width: 60px; height: 60px; margin: 0 auto 14px; border: 1.5px solid var(--de-gold); border-radius: 50%; display: grid; place-items: center; font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 700; color: var(--de-gold); }
+.dde-partner .nm { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 700; }
+.dde-partner .en { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--de-muted); letter-spacing: .1em; margin-top: 3px; }
+.dde-partner .ct { font-size: 13px; color: var(--de-body); margin-top: 12px; }
+.dde-partner .dt { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 12px; color: var(--de-gold); margin-top: 10px; }
+
+/* notices */
+.dde-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.dde-note { padding: 24px; }
+.dde-note .h { text-align: center; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 16px; color: var(--de-gold); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--de-line); }
+.dde-note .it { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px dashed var(--de-line); }
+.dde-note .it:last-child { border-bottom: none; }
+.dde-note .it .d { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--de-gold); width: 56px; flex-shrink: 0; }
+.dde-note .it .t { font-size: 12.5px; color: var(--de-body); }
+.dde-note .it .t b { color: var(--de-ink); }
+
+/* footer */
+.dde-foot { text-align: center; padding: 36px 28px; margin-top: 28px; }
+.dde-foot .big { font-family: 'Cormorant Garamond', serif; font-size: 36px; font-weight: 700; }
+.dde-foot .big em { font-style: italic; color: var(--de-gold); }
+.dde-foot .orn { margin: 14px 0; }
+.dde-foot .info { font-size: 11.5px; color: var(--de-muted); line-height: 1.8; }
+
+@media (max-width: 1024px) {
+  .dde-side { display: none; }
+  .dde-kpis { grid-template-columns: repeat(2, 1fr); }
+  .dde-acts { grid-template-columns: repeat(2, 1fr); }
+  .dde-heritage, .dde-cards, .dde-partners, .dde-notes { grid-template-columns: 1fr; }
+}

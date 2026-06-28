@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap');
+
+/* ============================================================
+   Dash Industrial Utilitarian — 시설·인프라 (hazard/metal/stencil)
+   Gene: G1 제도적 권위(시설·인프라) + G3 정보밀도·구조
+   ============================================================ */
+.din {
+  --in-bg: #E4E4DE;
+  --in-concrete: #D8D8D1;
+  --in-plate: #CFCEC5;
+  --in-plate2: #C4C3BA;
+  --in-ink: #161614;
+  --in-body: #3A3A36;
+  --in-muted: #6E6E68;
+  --in-line: #A8A89E;
+  --in-hazard: #F5C518;
+  --in-hazard2: #1A1A14;
+  --in-rivet: #8A8A82;
+  background: var(--in-bg);
+  background-image: repeating-linear-gradient(0deg, rgba(0,0,0,.012) 0 2px, transparent 2px 4px);
+  color: var(--in-ink);
+  font-family: 'Noto Sans KR', sans-serif;
+  overflow-x: clip;
+}
+.din * { box-sizing: border-box; }
+.din .mono { font-family: 'JetBrains Mono', monospace; }
+.din .stencil { font-family: 'Oswald', sans-serif; }
+
+/* hazard stripe */
+.din-hazard { background: repeating-linear-gradient(45deg, var(--in-hazard) 0 10px, var(--in-hazard2) 10px 20px); }
+.din-hazard-thin { background: repeating-linear-gradient(45deg, var(--in-hazard) 0 6px, var(--in-hazard2) 6px 12px); }
+
+/* metal plate with rivets */
+.din-plate { background: linear-gradient(180deg, var(--in-plate), var(--in-plate2)); border: 1px solid var(--in-line); border-radius: 3px; box-shadow: 0 2px 0 rgba(0,0,0,.08), inset 0 1px 0 rgba(255,255,255,.4); position: relative; }
+.din-plate::before, .din-plate::after { content: ''; position: absolute; width: 6px; height: 6px; border-radius: 50%; background: radial-gradient(circle at 30% 30%, #B0B0A6, #7A7A72); box-shadow: inset 0 -1px 1px rgba(0,0,0,.3); top: 8px; }
+.din-plate::before { left: 8px; }
+.din-plate::after { right: 8px; }
+
+/* topbar = metal bar */
+.din-top { position: sticky; top: 0; z-index: 50; background: linear-gradient(180deg, var(--in-plate), var(--in-plate2)); border-bottom: 2px solid var(--in-ink); display: flex; align-items: center; padding: 0 24px; height: 54px; box-shadow: 0 2px 0 rgba(0,0,0,.08); }
+.din-top::before { content: ''; position: absolute; left: 0; right: 0; bottom: -2px; height: 4px; background: repeating-linear-gradient(45deg, var(--in-hazard) 0 8px, var(--in-hazard2) 8px 16px); opacity: .85; }
+.din-top .brand { display: flex; align-items: center; gap: 13px; }
+.din-top .logo { width: 36px; height: 36px; background: var(--in-ink); color: var(--in-hazard); display: grid; place-items: center; font-family: 'Nanum Myeongjo', serif; font-weight: 800; font-size: 16px; border-radius: 2px; }
+.din-top .nm { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 16px; letter-spacing: .04em; text-transform: uppercase; }
+.din-top .nm small { display: block; font-family: 'JetBrains Mono', monospace; font-weight: 500; font-size: 8.5px; color: var(--in-muted); letter-spacing: .12em; margin-top: 1px; }
+.din-top .crumb { margin-left: 22px; padding: 5px 12px; background: var(--in-ink); color: var(--in-hazard); font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: .1em; }
+.din-top .actions { margin-left: auto; display: flex; gap: 10px; }
+.din-top .cta { padding: 9px 18px; background: var(--in-hazard); color: var(--in-ink); font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; cursor: pointer; border: 1px solid var(--in-ink); box-shadow: 2px 2px 0 var(--in-ink); }
+
+/* layout */
+.din-layout { display: flex; align-items: flex-start; padding: 24px 24px 70px; gap: 20px; max-width: 1480px; margin: 0 auto; }
+.din-side { width: 218px; flex-shrink: 0; position: sticky; top: 78px; padding: 18px 14px; }
+.din-side .sh { font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: .15em; color: var(--in-muted); text-transform: uppercase; margin: 12px 4px 8px; }
+.din-side .si { display: flex; align-items: center; gap: 11px; padding: 9px 12px; font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 600; letter-spacing: .03em; text-transform: uppercase; color: var(--in-body); margin-bottom: 3px; cursor: pointer; border-left: 4px solid transparent; }
+.din-side .si .rv { width: 7px; height: 7px; border-radius: 50%; background: var(--in-rivet); box-shadow: inset 0 -1px 1px rgba(0,0,0,.3); }
+.din-side .si:hover { color: var(--in-ink); }
+.din-side .si.active { border-left-color: var(--in-hazard); color: var(--in-ink); background: rgba(245,197,24,.12); }
+.din-side .si.active .rv { background: var(--in-hazard); }
+.din-side .gauge { margin: 14px 4px; padding: 12px; }
+.din-side .gauge .k { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--in-muted); letter-spacing: .08em; }
+.din-side .gauge .v { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 700; margin-top: 2px; }
+.din-side .gauge .v small { font-size: 12px; color: var(--in-muted); }
+.din-side .gauge .bar { height: 8px; background: var(--in-plate2); margin-top: 6px; border: 1px solid var(--in-line); position: relative; }
+.din-side .gauge .bar i { position: absolute; inset: 0 auto 0 0; background: var(--in-hazard); }
+
+.din-main { flex: 1; min-width: 0; }
+
+/* page header plate */
+.din-phead { padding: 22px 24px; margin-bottom: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.din-phead .tag { font-family: 'Oswald', sans-serif; font-size: 12px; letter-spacing: .15em; color: var(--in-ink); text-transform: uppercase; display: flex; align-items: center; gap: 8px; }
+.din-phead .tag::before { content: ''; width: 18px; height: 4px; }
+.din-phead h1 { font-family: 'Oswald', sans-serif; font-size: clamp(28px,4vw,40px); font-weight: 700; margin: 8px 0 4px; letter-spacing: .01em; text-transform: uppercase; line-height: 1; }
+.din-phead p { font-size: 13px; color: var(--in-body); margin: 0; max-width: 520px; }
+.din-phead .btn { padding: 11px 18px; background: var(--in-ink); color: var(--in-hazard); font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: .04em; text-transform: uppercase; cursor: pointer; border: 1px solid var(--in-ink); box-shadow: 2px 2px 0 var(--in-hazard); }
+
+/* KPI — plate cells with hazard units */
+.din-kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 20px; }
+.din-kpi { padding: 18px 16px; position: relative; }
+.din-kpi .lbl { font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: .1em; color: var(--in-muted); text-transform: uppercase; }
+.din-kpi .num { font-family: 'Oswald', sans-serif; font-size: 44px; font-weight: 700; line-height: 1; margin-top: 8px; letter-spacing: -.01em; }
+.din-kpi .num sup { font-size: 16px; color: var(--in-ink); background: var(--in-hazard); padding: 1px 5px; margin-left: 4px; }
+.din-kpi .sub { font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: var(--in-muted); margin-top: 8px; letter-spacing: .04em; }
+.din-kpi .strip { position: absolute; top: 0; left: 0; right: 0; height: 4px; }
+
+/* hero plate */
+.din-hero { padding: 0; margin-bottom: 20px; display: grid; grid-template-columns: 1.5fr 1fr; gap: 0; overflow: hidden; }
+.din-hero-l { padding: 26px 28px; border-right: 1px solid var(--in-line); }
+.din-hero-l .tag { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--in-ink); background: var(--in-hazard); display: inline-block; padding: 3px 10px; letter-spacing: .08em; }
+.din-hero-l h2 { font-family: 'Oswald', sans-serif; font-size: clamp(24px,3.2vw,34px); font-weight: 700; line-height: 1.1; margin: 14px 0 10px; text-transform: uppercase; letter-spacing: .01em; }
+.din-hero-l p { font-size: 13.5px; line-height: 1.8; color: var(--in-body); max-width: 480px; }
+.din-hero-l .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 14px; }
+.din-hero-l .tags span { font-family: 'JetBrains Mono', monospace; font-size: 10px; padding: 5px 10px; border: 1px solid var(--in-ink); color: var(--in-ink); background: var(--in-plate); letter-spacing: .04em; }
+.din-hero-r { min-height: 220px; position: relative; overflow: hidden; }
+.din-hero-r img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.4) contrast(1.05); }
+.din-hero-r::after { content: 'FACILITY · IT관'; position: absolute; bottom: 10px; left: 12px; font-family: 'Oswald', sans-serif; font-size: 11px; color: #fff; background: var(--in-ink); padding: 4px 10px; letter-spacing: .08em; }
+
+/* section */
+.din-stitle { display: flex; align-items: center; gap: 14px; margin: 22px 0 14px; }
+.din-stitle .n { font-family: 'Oswald', sans-serif; font-size: 13px; color: var(--in-ink); background: var(--in-hazard); padding: 4px 12px; letter-spacing: .1em; text-transform: uppercase; border: 1px solid var(--in-ink); }
+.din-stitle h2 { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 700; margin: 0; text-transform: uppercase; letter-spacing: .02em; }
+.din-stitle .r { flex: 1; height: 4px; }
+
+/* ACTS — 4 plates */
+.din-acts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 20px; }
+.din-act { padding: 22px 18px; }
+.din-act .ltr { font-family: 'Oswald', sans-serif; font-size: 64px; font-weight: 700; line-height: .8; color: var(--in-ink); }
+.din-act .ltr.h { color: var(--in-ink); -webkit-text-stroke: 2px var(--in-ink); color: transparent; }
+.din-act .nm { font-family: 'Oswald', sans-serif; font-size: 15px; font-weight: 700; margin-top: 14px; text-transform: uppercase; letter-spacing: .03em; }
+.din-act .ko { font-size: 12px; color: var(--in-muted); margin-top: 2px; }
+.din-act .ds { font-size: 12px; line-height: 1.7; color: var(--in-body); margin-top: 10px; }
+
+/* heritage — spec plates */
+.din-heritage { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 20px; }
+.din-h { padding: 20px; }
+.din-h .top { display: flex; align-items: baseline; gap: 12px; border-bottom: 1px solid var(--in-line); padding-bottom: 10px; margin-bottom: 10px; }
+.din-h .han { font-family: 'Nanum Myeongjo', serif; font-size: 26px; color: var(--in-ink); font-weight: 800; }
+.din-h .yr { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--in-muted); letter-spacing: .06em; }
+.din-h .nm { font-family: 'Oswald', sans-serif; font-size: 19px; font-weight: 700; text-transform: uppercase; }
+.din-h .nm span { font-size: 13px; color: var(--in-muted); margin-left: 6px; }
+.din-h .ds { font-size: 12.5px; line-height: 1.7; color: var(--in-body); margin-top: 8px; }
+.din-h .field { margin-top: 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--in-ink); background: var(--in-hazard); display: inline-block; padding: 4px 10px; letter-spacing: .06em; }
+
+/* research — 3 plates */
+.din-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+.din-card { overflow: hidden; }
+.din-card .img { height: 110px; overflow: hidden; border-bottom: 1px solid var(--in-line); position: relative; }
+.din-card .img img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(.5) contrast(1.05); }
+.din-card .img .tag { position: absolute; top: 8px; left: 8px; font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--in-ink); background: var(--in-hazard); padding: 2px 7px; letter-spacing: .06em; }
+.din-card .bd { padding: 18px; }
+.din-card .anchor { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--in-muted); letter-spacing: .06em; }
+.din-card .nm { font-family: 'Oswald', sans-serif; font-size: 18px; font-weight: 700; margin-top: 6px; text-transform: uppercase; }
+.din-card .ds { font-size: 12.5px; line-height: 1.7; color: var(--in-body); margin-top: 10px; }
+.din-card .pts { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--in-line); }
+.din-card .pts div { font-size: 12px; color: var(--in-body); padding: 3px 0; display: flex; gap: 8px; }
+.din-card .pts div::before { content: '▸'; color: var(--in-ink); }
+
+/* partners — plate list */
+.din-partners { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 20px; }
+.din-partner { padding: 22px; }
+.din-partner .ini { width: 50px; height: 50px; background: var(--in-ink); color: var(--in-hazard); display: grid; place-items: center; font-family: 'Oswald', sans-serif; font-size: 24px; font-weight: 700; margin-bottom: 14px; }
+.din-partner .nm { font-family: 'Oswald', sans-serif; font-size: 17px; font-weight: 700; text-transform: uppercase; }
+.din-partner .en { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--in-muted); margin-top: 2px; letter-spacing: .06em; }
+.din-partner .ct { font-size: 13px; color: var(--in-body); margin-top: 12px; }
+.din-partner .dt { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--in-ink); margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--in-line); }
+
+/* notes */
+.din-notes { display: grid; grid-template-columns: 1.4fr 1fr; gap: 12px; }
+.din-note { padding: 20px; }
+.din-note .h { font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 700; margin-bottom: 12px; text-transform: uppercase; letter-spacing: .06em; display: flex; align-items: center; gap: 8px; padding-bottom: 8px; border-bottom: 2px solid var(--in-ink); }
+.din-note .it { display: flex; gap: 12px; padding: 9px 0; border-bottom: 1px dashed var(--in-line); }
+.din-note .it:last-child { border-bottom: none; }
+.din-note .it .d { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--in-ink); background: var(--in-plate); padding: 2px 7px; width: 64px; text-align: center; flex-shrink: 0; }
+.din-note .it .t { font-size: 12.5px; color: var(--in-body); }
+.din-note .it .t b { color: var(--in-ink); }
+
+/* footer */
+.din-foot { margin-top: 22px; padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.din-foot .big { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; }
+.din-foot .info { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--in-muted); text-align: right; line-height: 1.7; letter-spacing: .04em; }
+
+@media (max-width: 1024px) {
+  .din-side { display: none; }
+  .din-kpis, .din-acts { grid-template-columns: repeat(2, 1fr); }
+  .din-heritage, .din-cards, .din-partners, .din-notes { grid-template-columns: 1fr; }
+  .din-hero { grid-template-columns: 1fr; }
+}
